@@ -76,7 +76,6 @@ body {
   border-color: var(--accent);
 }
 
-/* Card text */
 .card h2 {
   font-size: 1.2rem;
 }
@@ -104,9 +103,8 @@ footer {
 }
 
 /* =========================
-   Bingo Blitz CARD (homepage)
+   Bingo Blitz Card (Homepage)
    ========================= */
-
 .bingo-blitz {
   position: relative;
   overflow: hidden;
@@ -132,9 +130,8 @@ footer {
 }
 
 /* ==================================================
-   🔥 BINGO BLITZ PAGE — BACKGROUND IMAGE ONLY
+   BingoBlitz Page Background (ONLY this page)
    ================================================== */
-
 .bingoblitz-page {
   background-image:
     linear-gradient(
@@ -147,12 +144,7 @@ footer {
   background-attachment: fixed;
 }
 
-/* Ensure cards stay readable */
-.bingoblitz-page .card {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-}
-
-/* Links on Bingoblitz page */
+/* Link styling */
 .bingoblitz-page a {
   color: #2563eb;
   font-weight: 500;
@@ -163,111 +155,59 @@ footer {
 }
 
 /* ===============================
-   Bingo Blitz Content Styling
+   BingoBlitz Page Content
    =============================== */
-
 .bingoblitz-content {
   max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
   text-align: center;
 }
 
 /* Title */
 .bb-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Disclaimer text */
+/* Disclaimer */
 .bb-disclaimer {
+  max-width: 680px;
+  margin: 0 auto 2rem;
   font-size: 0.95rem;
   color: #475569;
-  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Date + Links block */
+.bb-date,
+.bb-links {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 /* Date */
 .bb-date {
   font-weight: 700;
   font-size: 1.05rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Links list */
+/* Links */
 .bb-links {
   list-style: none;
   padding: 0;
 }
 
 .bb-links li {
-  margin: 0.2rem 0;
+  margin: 0.25rem 0;
 }
 
 .bb-links a {
   font-size: 1rem;
-  color: #1d4ed8;
-}
-
-.bb-links a:hover {
-  text-decoration: underline;
-}
-
-/* Back link */
-.bb-back {
-  margin-top: 3rem;
-}
-
-/* =========================
-   BingoBlitz page layout
-   ========================= */
-
-.bingoblitz-content {
-  text-align: center;
-}
-
-/* Title */
-.bb-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Disclaimer text */
-.bb-disclaimer {
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
-  font-size: 1rem;
-  color: #475569;
-  line-height: 1.6;
-}
-
-/* LEFT-ALIGNED CONTENT BLOCK */
-.bb-date,
-.bb-links {
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-/* Date */
-.bb-date {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-}
-
-/* Links list */
-.bb-links {
-  list-style: none;
-  padding: 0;
-}
-
-.bb-links li {
-  margin-bottom: 0.75rem;
-}
-
-.bb-links a {
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 500;
+  line-height: 1.4;
 }
 
 /* Back link */
@@ -275,3 +215,27 @@ footer {
   margin-top: 2.5rem;
   text-align: center;
 }
+
+/* ===============================
+   📱 Mobile Optimization
+   =============================== */
+@media (max-width: 640px) {
+  .bb-title {
+    font-size: 1.8rem;
+  }
+
+  .bb-disclaimer {
+    font-size: 0.9rem;
+  }
+
+  .bb-date,
+  .bb-links {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .bb-links li {
+    margin: 0.35rem 0;
+  }
+}
+
