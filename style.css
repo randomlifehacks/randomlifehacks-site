@@ -244,3 +244,35 @@ footer {
   margin-top: 2rem;
 }
 
+/* ===============================
+   Mobile fixes for BingoBlitz page
+   =============================== */
+
+@media (max-width: 640px) {
+
+  /* Let content breathe on mobile */
+  .bingoblitz-content {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  /* Keep date & links fully left-aligned */
+  .bb-date,
+  .bb-links {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  /* Slight indent so links don’t touch screen edge */
+  .bb-links {
+    padding-left: 0.25rem;
+  }
+
+  /* Improve readability on small screens */
+  .bb-links a {
+    display: inline-block;
+    line-height: 1.5;
+  }
+}
