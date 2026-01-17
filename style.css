@@ -109,8 +109,22 @@ footer {
 /* =========================
    Bingo Blitz Card
    ========================= */
+
 .bingo-blitz {
-  border: 2px solid rgba(2, 6, 23, 0.18); /* visible BEFORE hover */
+  position: relative;
+  overflow: hidden;
+
+  /* Crisp outline */
+  border: 2px solid #020617; /* true near-black */
+  box-shadow: 0 0 0 1px rgba(2, 6, 23, 0.25);
+}
+
+/* Hover effect (optional but clean) */
+.bingo-blitz:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 8px 24px rgba(99, 102, 241, 0.18);
 }
 
 /* Background image */
@@ -121,39 +135,15 @@ footer {
   background-image: url("images/bingo-blitz.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.28;
+  opacity: 0.25; /* slightly lower for sharper edges */
   z-index: 0;
 }
 
-/* Extra crisp inner border */
-.bingo-blitz::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 1rem;
-  border: 1px solid rgba(2, 6, 23, 0.25);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Text above image */
+/* Text above background */
 .bingo-blitz h2,
 .bingo-blitz p {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   color: #020617;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
-}
-
-.bingo-blitz h2 {
-  font-weight: 700;
-}
-
-.bingo-blitz p {
-  font-size: 0.95rem;
-}
-
-/* Hover enhancement */
-.bingo-blitz:hover {
-  border-color: var(--accent);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.65);
 }
