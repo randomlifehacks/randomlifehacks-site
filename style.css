@@ -162,13 +162,12 @@ footer {
   text-decoration: underline;
 }
 
-/* =========================
-   BingoBlitz page content
-   ========================= */
+/* ===============================
+   Bingo Blitz Content Styling
+   =============================== */
 
 .bingoblitz-content {
   max-width: 720px;
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -176,34 +175,86 @@ footer {
 .bb-title {
   font-size: 2.5rem;
   font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Disclaimer text */
+.bb-disclaimer {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+/* Date */
+.bb-date {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Links list */
+.bb-links {
+  list-style: none;
+  padding: 0;
+}
+
+.bb-links li {
+  margin: 0.75rem 0;
+}
+
+.bb-links a {
+  font-size: 1rem;
+  color: #1d4ed8;
+}
+
+.bb-links a:hover {
+  text-decoration: underline;
+}
+
+/* Back link */
+.bb-back {
+  margin-top: 3rem;
+}
+
+/* =========================
+   BingoBlitz page layout
+   ========================= */
+
+.bingoblitz-content {
+  text-align: center;
+}
+
+/* Title */
+.bb-title {
+  font-size: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
-/* Disclaimer */
+/* Disclaimer text */
 .bb-disclaimer {
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto 2.5rem;
   font-size: 1rem;
   color: #475569;
   line-height: 1.6;
 }
 
-/* Left-aligned block (date + links) */
+/* LEFT-ALIGNED CONTENT BLOCK */
 .bb-date,
 .bb-links {
   max-width: 520px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
 }
 
 /* Date */
 .bb-date {
-  font-size: 1.05rem;
-  font-weight: 700;
   margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
 
-/* Links */
+/* Links list */
 .bb-links {
   list-style: none;
   padding: 0;
@@ -215,8 +266,8 @@ footer {
 
 .bb-links a {
   font-size: 1rem;
-  font-weight: 500;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Back link */
