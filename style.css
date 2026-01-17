@@ -1,61 +1,85 @@
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --accent: #6366f1;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-  background: #f9fafb;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.hero {
+.header {
   text-align: center;
-  padding: 5rem 1rem;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
+  padding: 4rem 1rem 2rem;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+.header p {
+  margin-top: 0.5rem;
+  color: var(--muted);
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 1.6rem;
-  background: white;
-  color: #4f46e5;
-  text-decoration: none;
-  border-radius: 999px;
-  font-weight: bold;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 4rem 2rem;
-  max-width: 1000px;
+.container {
+  max-width: 1100px;
   margin: auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
-  background: white;
-  padding: 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.placeholder {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 footer {
   text-align: center;
   padding: 2rem;
-  color: #666;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
+
