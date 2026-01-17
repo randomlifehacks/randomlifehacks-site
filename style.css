@@ -83,3 +83,27 @@ footer {
   font-size: 0.9rem;
 }
 
+.bingo-blitz {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.bingo-blitz::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/bingo-blitz.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25; /* controls translucency */
+  filter: blur(1px);
+  z-index: 0;
+}
+
+.bingo-blitz h2,
+.bingo-blitz p {
+  position: relative;
+  z-index: 1;
+}
+
