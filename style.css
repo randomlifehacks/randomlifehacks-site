@@ -7,7 +7,9 @@
   --accent: #6366f1;
 }
 
-/* Global reset */
+/* =====================
+   Global Reset
+   ===================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Header */
+/* =====================
+   Header
+   ===================== */
 .header {
   text-align: center;
   padding: 4rem 1rem 2rem;
@@ -38,7 +42,9 @@ body {
   color: var(--muted);
 }
 
-/* Layout */
+/* =====================
+   Layout
+   ===================== */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -51,17 +57,18 @@ body {
   gap: 1.5rem;
 }
 
-/* Cards */
+/* =====================
+   Cards
+   ===================== */
 .card {
   position: relative;
   background: var(--card);
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 2rem;
   text-decoration: none;
   color: inherit;
   transition: all 0.25s ease;
-  overflow: hidden;
 }
 
 .card:hover {
@@ -86,7 +93,9 @@ body {
   pointer-events: none;
 }
 
-/* Footer */
+/* =====================
+   Footer
+   ===================== */
 footer {
   text-align: center;
   padding: 2rem;
@@ -94,34 +103,33 @@ footer {
   font-size: 0.9rem;
 }
 
-/* =========================
-   Bingo Blitz Card
-   ========================= */
+/* ==================================================
+   🔥 BINGO BLITZ PAGE — BACKGROUND IMAGE ONLY
+   ================================================== */
 
-.bingo-blitz {
-  border: 2px solid #020617; /* crisp black border */
-}
-
-.bingo-blitz::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/images/bingo-blitz.jpg");
+.bingoblitz-page {
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("/images/bb-background.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.25;
-  z-index: 0;
+  background-attachment: fixed;
 }
 
-.bingo-blitz h2,
-.bingo-blitz p {
-  position: relative;
-  z-index: 1;
-  color: #020617;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+/* Ensure cards stay readable */
+.bingoblitz-page .card {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-.bingo-blitz:hover {
-  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.2);
+/* Links on Bingoblitz page */
+.bingoblitz-page a {
+  color: #2563eb;
+  font-weight: 500;
 }
 
+.bingoblitz-page a:hover {
+  text-decoration: underline;
+}
