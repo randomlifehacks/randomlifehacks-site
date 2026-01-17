@@ -161,3 +161,58 @@ footer {
 .bingoblitz-page a:hover {
   text-decoration: underline;
 }
+
+/* ===============================
+   Bingo Blitz Content Styling
+   =============================== */
+
+.bingoblitz-content {
+  max-width: 720px;
+  text-align: center;
+}
+
+/* Title */
+.bb-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Disclaimer text */
+.bb-disclaimer {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+/* Date */
+.bb-date {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Links list */
+.bb-links {
+  list-style: none;
+  padding: 0;
+}
+
+.bb-links li {
+  margin: 0.75rem 0;
+}
+
+.bb-links a {
+  font-size: 1rem;
+  color: #1d4ed8;
+}
+
+.bb-links a:hover {
+  text-decoration: underline;
+}
+
+/* Back link */
+.bb-back {
+  margin-top: 3rem;
+}
+
