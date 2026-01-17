@@ -1,159 +1,48 @@
-:root {
-  --bg: #fafafa;
-  --card: #ffffff;
-  --text: #0f172a;
-  --muted: #64748b;
-  --border: #e5e7eb;
-  --accent: #6366f1;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RandomLifeHacks</title>
 
-/* =========================
-   Global Reset
-   ========================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-body {
-  background: var(--bg);
-  color: var(--text);
+  <!-- Header -->
+  <header class="header">
+    <h1>RandomLifeHacks</h1>
+    <p>Freebies, bonuses, and useful links — organized by game.</p>
+  </header>
 
-  /* Makes text crisp */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  <!-- Main Content -->
+  <main class="container">
+    <section class="grid">
 
-/* =========================
-   Header
-   ========================= */
-.header {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-}
+      <!-- Bingo Blitz Card -->
+      <a
+        href="#"
+        class="card bingo-blitz"
+        aria-label="Bingo Blitz freebies"
+      >
+        <h2>Bingo Blitz</h2>
+        <p>Free Daily Credits & Powerups</p>
+      </a>
 
-.header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
+      <!-- Placeholder Card -->
+      <div class="card placeholder">
+        <h2>Coming soon...</h2>
+        <p>Email RandomLifeHacksReq@gmail.com for requests!</p>
+      </div>
 
-.header p {
-  margin-top: 0.5rem;
-  color: var(--muted);
-}
+    </section>
+  </main>
 
-/* =========================
-   Layout
-   ========================= */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
-}
+  <!-- Footer -->
+  <footer>
+    © 2026 RandomLifeHacks.com
+  </footer>
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-/* =========================
-   Base Card Styling
-   ========================= */
-.card {
-  position: relative;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 2rem;
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
-}
-
-.card h2 {
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin-top: 0.5rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* Placeholder card */
-.placeholder {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* =========================
-   Footer
-   ========================= */
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-/* =========================
-   Bingo Blitz Card
-   ========================= */
-.bingo-blitz {
-  border: 2px solid rgba(2, 6, 23, 0.18); /* visible BEFORE hover */
-}
-
-/* Background image */
-.bingo-blitz::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("images/bingo-blitz.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.28;
-  z-index: 0;
-}
-
-/* Extra crisp inner border */
-.bingo-blitz::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 1rem;
-  border: 1px solid rgba(2, 6, 23, 0.25);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Text above image */
-.bingo-blitz h2,
-.bingo-blitz p {
-  position: relative;
-  z-index: 2;
-  color: #020617;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
-}
-
-.bingo-blitz h2 {
-  font-weight: 700;
-}
-
-.bingo-blitz p {
-  font-size: 0.95rem;
-}
-
-/* Hover enhancement */
-.bingo-blitz:hover {
-  border-color: var(--accent);
-}
+</body>
+</html>
