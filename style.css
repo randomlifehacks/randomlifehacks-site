@@ -103,6 +103,34 @@ footer {
   font-size: 0.9rem;
 }
 
+/* =========================
+   Bingo Blitz CARD (homepage)
+   ========================= */
+
+.bingo-blitz {
+  position: relative;
+  overflow: hidden;
+}
+
+.bingo-blitz::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/bingo-blitz.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.bingo-blitz h2,
+.bingo-blitz p {
+  position: relative;
+  z-index: 1;
+  color: #020617;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
 /* ==================================================
    🔥 BINGO BLITZ PAGE — BACKGROUND IMAGE ONLY
    ================================================== */
