@@ -105,6 +105,15 @@ footer {
   overflow: hidden;
 }
 
+.bingo-blitz {
+  border: 1.5px solid rgba(2, 6, 23, 0.15);
+}
+
+.bingo-blitz:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+}
+
 /* Background image */
 .bingo-blitz::before {
   content: "";
