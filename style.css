@@ -105,6 +105,7 @@ footer {
    Bingo Blitz Card (Homepage)
    ========================= */
 .bingo-blitz {
+  border: 2px solid #020617; /* near-black, crisp */
   position: relative;
   overflow: hidden;
 }
