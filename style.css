@@ -216,3 +216,63 @@ footer {
   margin-top: 3rem;
 }
 
+/* =========================
+   BingoBlitz page layout
+   ========================= */
+
+.bingoblitz-content {
+  text-align: center;
+}
+
+/* Title */
+.bb-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Disclaimer text */
+.bb-disclaimer {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* LEFT-ALIGNED CONTENT BLOCK */
+.bb-date,
+.bb-links {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Date */
+.bb-date {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* Links list */
+.bb-links {
+  list-style: none;
+  padding: 0;
+}
+
+.bb-links li {
+  margin-bottom: 0.75rem;
+}
+
+.bb-links a {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Back link */
+.bb-back {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
