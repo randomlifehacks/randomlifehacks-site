@@ -115,7 +115,7 @@ footer {
   overflow: hidden;
 
   /* Crisp outline */
-  border: 2px solid #020617; /* true near-black */
+  border: 1px solid #020617; /* true near-black */
   box-shadow: 0 0 0 1px rgba(2, 6, 23, 0.25);
 }
 
