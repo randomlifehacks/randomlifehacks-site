@@ -1,126 +1,164 @@
-:root {
-  --bg: #fafafa;
-  --card: #ffffff;
-  --text: #0f172a;
-  --muted: #64748b;
-  --border: #e5e7eb;
-  --accent: #6366f1;
-}
-
-/* Global reset */
+/* =========================
+   Global Reset & Base
+========================= */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.header p {
-  margin-top: 0.5rem;
-  color: var(--muted);
-}
-
-/* Layout */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Cards */
-.card {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background: #f6f7fb;
+  color: #111827;
+  line-height: 1.6;
   position: relative;
-  background: var(--card);
-  border: 2px solid var(--border);
-  border-radius: 1rem;
-  padding: 2rem;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.25s ease;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-
-/* Card text */
-.card h2 {
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin-top: 0.5rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* Placeholder */
-.placeholder {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--muted);
-  font-size: 0.9rem;
 }
 
 /* =========================
-   Bingo Blitz Card
-   ========================= */
-
-.bingo-blitz {
-  border: 1px solid #020617; /* crisp black border */
-}
-
-.bingo-blitz::before {
+   Bingo Blitz Background
+========================= */
+body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background-image: url("/images/bingo-blitz.jpg");
+  background-image: url("/images/bb-background.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.25;
-  z-index: 0;
+  background-repeat: no-repeat;
+  opacity: 0.18; /* translucent effect */
+  z-index: -1;
 }
 
-.bingo-blitz h2,
-.bingo-blitz p {
-  position: relative;
-  z-index: 1;
-  color: #020617;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+/* =========================
+   Layout Container
+========================= */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
 }
 
-.bingo-blitz:hover {
-  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.2);
+/* =========================
+   Page Headings
+========================= */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 3rem;
+}
+
+/* =========================
+   Grid (Cards)
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+/* =========================
+   Cards
+========================= */
+.card {
+  display: block;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid #e5e7eb;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #6366f1;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Bingo Blitz Reward Box
+========================= */
+.reward-box {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.reward-box h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.reward-box ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.reward-box li {
+  margin-bottom: 0.75rem;
+}
+
+.reward-box a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.reward-box a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Back Link
+========================= */
+.back-link {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.back-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
