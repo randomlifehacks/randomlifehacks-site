@@ -237,5 +237,10 @@ footer {
   .bb-links li {
     margin: 0.35rem 0;
   }
+  
+}
+/* Space between daily sections */
+.bb-links + .bb-date {
+  margin-top: 2rem;
 }
 
