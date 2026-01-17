@@ -86,7 +86,6 @@ footer {
 .bingo-blitz {
   position: relative;
   overflow: hidden;
-  color: #ffffff;
 }
 
 .bingo-blitz::before {
@@ -101,9 +100,12 @@ footer {
   z-index: 0;
 }
 
-.bingo-blitz h2,
-.bingo-blitz p {
-  position: relative;
-  z-index: 1;
+.bingo-blitz h2 {
+  color: #0f172a; /* same as --text */
 }
+
+.bingo-blitz p {
+  color: #475569; /* slightly darker muted text */
+}
+
 
