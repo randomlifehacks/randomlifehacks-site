@@ -25,7 +25,7 @@ body {
 }
 
 /* =====================
-   Header
+   Header (homepage only)
    ===================== */
 .header {
   text-align: center;
@@ -58,7 +58,7 @@ body {
 }
 
 /* =====================
-   Cards
+   Cards (homepage)
    ===================== */
 .card {
   position: relative;
@@ -86,7 +86,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* Placeholder */
 .placeholder {
   opacity: 0.6;
   pointer-events: none;
@@ -130,18 +129,31 @@ footer {
 }
 
 /* ==================================================
-   BingoBlitz Page Background (ONLY this page)
+   🔥 BingoBlitz PAGE — FIXED BACKGROUND (ALL DEVICES)
    ================================================== */
+
 .bingoblitz-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Fixed background layer (mobile-safe) */
+.bingoblitz-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
   background-image:
     linear-gradient(
       rgba(255, 255, 255, 0.75),
       rgba(255, 255, 255, 0.75)
     ),
     url("/images/bb-background.jpg");
+
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 /* Link styling */
@@ -155,12 +167,12 @@ footer {
 }
 
 /* ===============================
-   BingoBlitz Page Content
+   BingoBlitz Content
    =============================== */
 .bingoblitz-content {
   max-width: 720px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.25rem;
   text-align: center;
 }
 
@@ -180,7 +192,7 @@ footer {
   line-height: 1.6;
 }
 
-/* Date + Links block */
+/* Date + Links blocks */
 .bb-date,
 .bb-links {
   max-width: 520px;
@@ -192,7 +204,12 @@ footer {
 .bb-date {
   font-weight: 700;
   font-size: 1.05rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Space between daily sections */
+.bb-links + .bb-date {
+  margin-top: 2rem;
 }
 
 /* Links */
@@ -206,8 +223,9 @@ footer {
 }
 
 .bb-links a {
+  display: inline-block;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Back link */
@@ -220,6 +238,7 @@ footer {
    📱 Mobile Optimization
    =============================== */
 @media (max-width: 640px) {
+
   .bb-title {
     font-size: 1.8rem;
   }
@@ -228,35 +247,7 @@ footer {
     font-size: 0.9rem;
   }
 
-  .bb-date,
-  .bb-links {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .bb-links li {
-    margin: 0.35rem 0;
-  }
-  
-}
-/* Space between daily sections */
-.bb-links + .bb-date {
-  margin-top: 2rem;
-}
-
-/* ===============================
-   Mobile fixes for BingoBlitz page
-   =============================== */
-
-@media (max-width: 640px) {
-
-  /* Let content breathe on mobile */
-  .bingoblitz-content {
-    max-width: 100%;
-    padding: 1.25rem;
-  }
-
-  /* Keep date & links fully left-aligned */
+  /* Keep links LEFT aligned on mobile */
   .bb-date,
   .bb-links {
     max-width: 100%;
@@ -265,14 +256,12 @@ footer {
     text-align: left;
   }
 
-  /* Slight indent so links don’t touch screen edge */
+  /* Prevent links from touching screen edge */
   .bb-links {
     padding-left: 0.25rem;
   }
 
-  /* Improve readability on small screens */
-  .bb-links a {
-    display: inline-block;
-    line-height: 1.5;
+  .bb-links li {
+    margin: 0.3rem 0;
   }
 }
