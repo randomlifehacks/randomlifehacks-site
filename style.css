@@ -144,10 +144,26 @@ body {
   border-color: #020617;
 }
 
+
 .bflix-card::before {
-  background-image: url("/images/bflix.png");
-  opacity: 0.4;
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ),
+    url("/images/bflix.png");
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 1; /* important */
+  z-index: 0;
 }
+
 
 /* 🔥 NEW: Text visibility layer */
 .bflix-card .bflix-text {
