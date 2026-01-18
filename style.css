@@ -224,7 +224,7 @@ body.home-page::before {
   inset: 0;
   z-index: -1;
 
-  background-image: url("/images/homepageig2.png");
+  background-image: url("/images/backgroundig2.png");
 
   background-size: cover;
   background-position: center;
