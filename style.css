@@ -164,7 +164,7 @@ body {
   background-size: cover;
   background-position: center;
 
-  opacity: 1; /* important */
+  opacity: 0.9; 
   z-index: 0;
 }
 
