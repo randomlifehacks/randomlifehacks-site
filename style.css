@@ -335,3 +335,30 @@ footer {
   }
 }
 
+/* ==================================================
+   🎬 STREAMING PAGE — FIXED BACKGROUND (ALL DEVICES)
+   ================================================== */
+
+.streaming-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Fixed background layer (mobile-safe) */
+.streaming-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("/images/streaming.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
