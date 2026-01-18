@@ -147,7 +147,7 @@ body {
 
 .bflix-card::before {
   background-image: url("/images/bflix.png");
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .bflix-card h2,
@@ -244,7 +244,7 @@ body.streaming-page::before {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #2563eb;
+  color: #020617;
 }
 
 .stream-disclaimer {
