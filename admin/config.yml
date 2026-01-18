@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.html"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "bingoblitz"
+    label: "Bingo Blitz"
+    folder: "bingoblitz"
+    create: false
+    fields:
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "dicedreams"
+    label: "Dice Dreams"
+    folder: "dicedreams"
+    create: false
+    fields:
+      - { label: "Content", name: "body", widget: "markdown" }
