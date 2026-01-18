@@ -105,7 +105,7 @@ body {
 }
 
 /* =========================
-   Bingo Blitz Card
+   Bingo Blitz Card (Homepage)
    ========================= */
 .bingo-blitz {
   border-color: #020617;
@@ -126,68 +126,35 @@ body {
    ========================= */
 .streaming {
   border-color: #020617;
-  position: relative;
-  overflow: hidden;
-  background: transparent; /* 🔥 IMPORTANT */
 }
 
-/* Background image layer */
 .streaming::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
   background-image: url("/images/streaming.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  opacity: 0.25;
-  z-index: 0;
 }
 
-/* Text stays above image */
 .streaming h2,
 .streaming p {
-  position: relative;
-  z-index: 1;
   color: #020617;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 /* =========================
-   Bflix Streaming Card
+   Bflix Card (Streaming Page)
    ========================= */
-
 .bflix-card {
-  border: 2px solid #020617; /* crisp dark border */
-  position: relative;
-  overflow: hidden;
+  border-color: #020617;
 }
 
-/* Background image layer */
 .bflix-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
   background-image: url("/images/bflix.png");
-  background-size: cover;
-  background-position: center;
-
-  opacity: 0.2; /* translucent effect */
-  z-index: 0;
+  opacity: 0.2;
 }
 
-/* Keep text above background */
 .bflix-card h2,
 .bflix-card p {
-  position: relative;
-  z-index: 1;
   color: #020617;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
-
 
 /* =====================
    Placeholder Card
@@ -208,37 +175,83 @@ footer {
 }
 
 /* ==================================================
-   🔥 BingoBlitz PAGE — FIXED BACKGROUND
+   🔥 BINGOBLITZ PAGE — FIXED BACKGROUND
    ================================================== */
-.bingoblitz-page {
+
+body.bingoblitz-page {
   position: relative;
   min-height: 100vh;
+  background: transparent;
 }
 
-.bingoblitz-page::before {
+body.bingoblitz-page::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
+
   background-image:
     linear-gradient(
       rgba(255, 255, 255, 0.75),
       rgba(255, 255, 255, 0.75)
     ),
     url("/images/bb-background.jpg");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Links */
-.bingoblitz-page a {
-  color: #2563eb;
-  font-weight: 500;
+/* ==================================================
+   🎬 STREAMING PAGE — FIXED BACKGROUND
+   ================================================== */
+
+body.streaming-page {
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
 }
 
-.bingoblitz-page a:hover {
-  text-decoration: underline;
+body.streaming-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("/images/streaming.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===============================
+   Streaming Page Content
+   =============================== */
+.streaming-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.stream-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.stream-disclaimer {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 /* ===============================
@@ -266,43 +279,6 @@ footer {
   line-height: 1.6;
 }
 
-.bb-date,
-.bb-links {
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.bb-date {
-  font-weight: 700;
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
-}
-
-.bb-links + .bb-date {
-  margin-top: 2rem;
-}
-
-.bb-links {
-  list-style: none;
-  padding: 0;
-}
-
-.bb-links li {
-  margin: 0.25rem 0;
-}
-
-.bb-links a {
-  display: inline-block;
-  font-size: 1rem;
-  line-height: 1.45;
-}
-
-.bb-back {
-  margin-top: 2.5rem;
-  text-align: center;
-}
-
 /* ===============================
    📱 Mobile Optimization
    =============================== */
@@ -312,53 +288,13 @@ footer {
     font-size: 2rem;
   }
 
-  .bb-title {
+  .bb-title,
+  .stream-title {
     font-size: 1.8rem;
   }
 
-  .bb-disclaimer {
+  .bb-disclaimer,
+  .stream-disclaimer {
     font-size: 0.9rem;
   }
-
-  .bb-date,
-  .bb-links {
-    max-width: 100%;
-    text-align: left;
-  }
-
-  .bb-links {
-    padding-left: 0.25rem;
-  }
-
-  .bb-links li {
-    margin: 0.3rem 0;
-  }
-}
-
-/* ==================================================
-   🎬 STREAMING PAGE — FIXED BACKGROUND (ALL DEVICES)
-   ================================================== */
-
-.streaming-page {
-  position: relative;
-  min-height: 100vh;
-}
-
-/* Fixed background layer (mobile-safe) */
-.streaming-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
-    ),
-    url("/images/streaming.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
