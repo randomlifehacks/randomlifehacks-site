@@ -114,7 +114,6 @@ body {
   background-image: url("/images/bingo-blitz.jpg");
 }
 
-/* ✅ FIX: Bingo Blitz text color */
 .bingo-blitz h2,
 .bingo-blitz p {
   color: #020617;
@@ -161,7 +160,6 @@ body {
   z-index: 0;
 }
 
-/* Text visibility layer */
 .bflix-card .bflix-text {
   display: inline-block;
   padding: 0.9rem 1.2rem;
@@ -239,30 +237,6 @@ body.bingoblitz-page::before {
   background-repeat: no-repeat;
 }
 
-/* ==================================================
-   🎬 STREAMING PAGE — FIXED BACKGROUND
-   ================================================== */
-body.streaming-page {
-  position: relative;
-  min-height: 100vh;
-}
-
-body.streaming-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
-    ),
-    url("/images/streaming.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 /* ===============================
    Page Content
    =============================== */
@@ -288,6 +262,25 @@ body.streaming-page::before {
   color: #475569;
   line-height: 1.6;
   margin-bottom: 2rem;
+}
+
+/* ===============================
+   🆕 BingoBlitz Date & Links
+   =============================== */
+.bb-date {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.bb-links {
+  list-style: none;
+  margin-bottom: 1.75rem;
+  padding: 0;
+}
+
+.bb-links li {
+  margin-bottom: 0.5rem;
 }
 
 /* ===============================
