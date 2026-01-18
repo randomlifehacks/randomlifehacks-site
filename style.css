@@ -209,6 +209,28 @@ footer {
   font-size: 0.9rem;
 }
 
+
+/* ==================================================
+   🏠 HOMEPAGE — FIXED BACKGROUND
+   ================================================== */
+body.home-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+body.home-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: url("/images/homepageig.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* ==================================================
    🔥 BINGOBLITZ PAGE — FIXED BACKGROUND
    ================================================== */
