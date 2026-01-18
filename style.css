@@ -129,6 +129,33 @@ footer {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
+/* =========================
+   Streaming Card (Homepage)
+   ========================= */
+.streaming {
+  position: relative;
+  overflow: hidden;
+}
+
+.streaming::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/streams.jpg"); /* or streaming.jpg */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.streaming h2,
+.streaming p {
+  position: relative;
+  z-index: 1;
+  color: #020617;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
 /* ==================================================
    🔥 BingoBlitz PAGE — FIXED BACKGROUND (ALL DEVICES)
    ================================================== */
