@@ -147,7 +147,7 @@ body {
 
 .bflix-card::before {
   background-image: url("/images/bflix.png");
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .bflix-card h2,
