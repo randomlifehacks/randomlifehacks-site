@@ -114,6 +114,16 @@ body {
   background-image: url("/images/bingo-blitz.jpg");
 }
 
+.bflix-card h2,
+.bflix-card p {
+  color: #020617;
+  font-weight: 600;
+  text-shadow:
+    0 1px 2px rgba(255, 255, 255, 0.8),
+    0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+
 /* =========================
    Streaming Card (Homepage)
    ========================= */
@@ -132,50 +142,53 @@ body {
 }
 
 /* =========================
-   🔥 Bflix Card (Streaming Page)
+   Bflix Card (Streaming Page)
    ========================= */
 .bflix-card {
   border-color: #020617;
-  padding: 0;
 }
+
 
 .bflix-card::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  background-image: url("/images/bflix.png");
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ),
+    url("/images/bflix.png");
+
   background-size: cover;
   background-position: center;
 
-  opacity: 1;
+  opacity: 0.9; 
   z-index: 0;
 }
 
-/* 🟣 DARK PHOTO-MATCHED TEXT OVERLAY */
+
+/* 🔥 NEW: Text visibility layer */
 .bflix-card .bflix-text {
-  position: relative;
-  z-index: 1;
+  display: inline-block;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.75rem;
 
-  margin: 1.5rem;
-  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(4px);
 
-  background: rgba(45, 15, 30, 0.88); /* deep burgundy */
-  border-radius: 0.85rem;
-
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 .bflix-card h2 {
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+  color: #020617;
 }
 
 .bflix-card p {
-  color: #f8fafc;
+  color: #020617;
   font-weight: 500;
-  line-height: 1.55;
 }
 
 /* =====================
@@ -197,6 +210,32 @@ footer {
 }
 
 /* ==================================================
+   🔥 BINGOBLITZ PAGE — FIXED BACKGROUND
+   ================================================== */
+body.bingoblitz-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+body.bingoblitz-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("/images/bb-background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ==================================================
    🎬 STREAMING PAGE — FIXED BACKGROUND
    ================================================== */
 body.streaming-page {
@@ -212,8 +251,8 @@ body.streaming-page::before {
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.65),
-      rgba(255, 255, 255, 0.65)
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
     ),
     url("/images/streaming.jpg");
 
@@ -247,6 +286,31 @@ body.streaming-page::before {
 }
 
 /* ===============================
+   BingoBlitz Content
+   =============================== */
+.bingoblitz-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.bb-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #2563eb;
+}
+
+.bb-disclaimer {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ===============================
    📱 Mobile Optimization
    =============================== */
 @media (max-width: 640px) {
@@ -255,16 +319,13 @@ body.streaming-page::before {
     font-size: 2rem;
   }
 
+  .bb-title,
   .stream-title {
     font-size: 1.8rem;
   }
 
+  .bb-disclaimer,
   .stream-disclaimer {
     font-size: 0.9rem;
-  }
-
-  .bflix-card .bflix-text {
-    margin: 1rem;
-    padding: 1.4rem;
   }
 }
