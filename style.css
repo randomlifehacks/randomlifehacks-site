@@ -121,6 +121,22 @@ body {
 }
 
 /* =========================
+   Dice Dreams Card
+   ========================= */
+.dice-dreams {
+  border-color: #020617;
+}
+
+.dice-dreams::before {
+  background-image: url("/images/dicedreams.png");
+}
+
+.dice-dreams h2,
+.dice-dreams p {
+  color: #020617;
+  text-shadow: none;
+}
+/* =========================
    Streaming Card (Homepage)
    ========================= */
 .streaming {
