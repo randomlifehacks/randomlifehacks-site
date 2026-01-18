@@ -155,6 +155,40 @@ body {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
+/* =========================
+   Bflix Streaming Card
+   ========================= */
+
+.bflix-card {
+  border: 2px solid #020617; /* crisp dark border */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.bflix-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/bflix.png");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.2; /* translucent effect */
+  z-index: 0;
+}
+
+/* Keep text above background */
+.bflix-card h2,
+.bflix-card p {
+  position: relative;
+  z-index: 1;
+  color: #020617;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+
 /* =====================
    Placeholder Card
    ===================== */
