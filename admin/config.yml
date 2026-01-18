@@ -5,6 +5,9 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+site_url: "https://inspiring-jelly-af4498.netlify.app"
+display_url: "https://inspiring-jelly-af4498.netlify.app"
+
 collections:
   - name: "pages"
     label: "Pages"
@@ -19,13 +22,8 @@ collections:
   - name: "bingoblitz"
     label: "Bingo Blitz"
     folder: "bingoblitz"
-    create: false
+    create: true
+    slug: "{{slug}}"
     fields:
-      - { label: "Content", name: "body", widget: "markdown" }
-
-  - name: "dicedreams"
-    label: "Dice Dreams"
-    folder: "dicedreams"
-    create: false
-    fields:
-      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Content", name:
