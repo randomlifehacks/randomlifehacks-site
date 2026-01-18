@@ -125,6 +125,7 @@ body {
    Streaming Card (Homepage)
    ========================= */
 .streaming {
+  border-color: #020617;
   position: relative;
   overflow: hidden;
   background: transparent; /* 🔥 IMPORTANT */
