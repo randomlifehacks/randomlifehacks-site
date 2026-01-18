@@ -122,18 +122,34 @@ body {
 }
 
 /* =========================
-   Streaming Card
+   Streaming Card (Homepage)
    ========================= */
 .streaming {
-  border-color: #020617;
+  position: relative;
+  overflow: hidden;
+  background: transparent; /* 🔥 IMPORTANT */
 }
 
+/* Background image layer */
 .streaming::before {
-  background-image: url("/images/streams.jpg");
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/streaming.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.25;
+  z-index: 0;
 }
 
+/* Text stays above image */
 .streaming h2,
 .streaming p {
+  position: relative;
+  z-index: 1;
   color: #020617;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
