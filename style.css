@@ -252,6 +252,31 @@ body.bingoblitz-page::before {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* ==================================================
+   🎲 DICE DREAMS PAGE — FIXED BACKGROUND
+   ================================================== */
+body.dicedreams-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+body.dicedreams-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("/images/dicedreamspage.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* ==================================================
    🎬 STREAMING PAGE — FIXED BACKGROUND
    ================================================== */
@@ -280,7 +305,8 @@ body.streaming-page::before {
    Page Content
    =============================== */
 .streaming-content,
-.bingoblitz-content {
+.bingoblitz-content,
+.dicedreams-content {
   max-width: 720px;
   margin: 0 auto;
   padding: 1.25rem;
@@ -288,7 +314,8 @@ body.streaming-page::before {
 }
 
 .stream-title,
-.bb-title {
+.bb-title,
+.dd-title {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
@@ -296,7 +323,8 @@ body.streaming-page::before {
 }
 
 .stream-disclaimer,
-.bb-disclaimer {
+.bb-disclaimer,
+.dd-disclaimer {
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.6;
@@ -319,6 +347,25 @@ body.streaming-page::before {
 }
 
 .bb-links li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===============================
+   🆕 Dice Dreams Date & Links
+   =============================== */
+.daily-date {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.daily-links {
+  list-style: none;
+  margin-bottom: 1.75rem;
+  padding: 0;
+}
+
+.daily-links li {
   margin-bottom: 0.5rem;
 }
 
