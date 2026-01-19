@@ -4,8 +4,7 @@ backend:
   branch: main
   site_domain: randomlifehacks.com
 
-  # 🔑 REQUIRED: tell Decap where auth lives
-  base_url: https://auth.decapcms.org
+  base_url: https://decapcms-auth.netlify.app
   auth_endpoint: auth
 
 media_folder: "images"
