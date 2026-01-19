@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: randomlifehacks/randomlifehacks-site
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "test"
+    label: "Test Content"
+    folder: "content/test"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
