@@ -1,3 +1,6 @@
+/* ==================================================
+   CSS VARIABLES
+   ================================================== */
 :root {
   --bg: #fafafa;
   --card: #ffffff;
@@ -7,9 +10,9 @@
   --accent: #6366f1;
 }
 
-/* =====================
-   Global Reset
-   ===================== */
+/* ==================================================
+   GLOBAL RESET
+   ================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,9 +27,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =====================
-   Header (homepage only)
-   ===================== */
+/* ==================================================
+   HEADER (Homepage)
+   ================================================== */
 .header {
   text-align: center;
   padding: 4rem 1rem 2rem;
@@ -42,9 +45,9 @@ body {
   color: var(--muted);
 }
 
-/* =====================
-   Layout
-   ===================== */
+/* ==================================================
+   LAYOUT
+   ================================================== */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -57,9 +60,9 @@ body {
   gap: 1.5rem;
 }
 
-/* =====================
-   Cards (shared)
-   ===================== */
+/* ==================================================
+   BASE CARD (Shared)
+   ================================================== */
 .card {
   position: relative;
   overflow: hidden;
@@ -67,9 +70,9 @@ body {
   padding: 2rem;
   text-decoration: none;
   color: inherit;
-  transition: all 0.25s ease;
   border: 2px solid var(--border);
   background: rgba(255, 255, 255, 0.85);
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .card:hover {
@@ -88,11 +91,10 @@ body {
 
 .card p {
   margin-top: 0.5rem;
-  color: var(--muted);
   font-size: 0.95rem;
+  color: var(--muted);
 }
 
-/* Background layer for cards */
 .card::before {
   content: "";
   position: absolute;
@@ -103,44 +105,33 @@ body {
   opacity: 0.35;
 }
 
-/* =========================
-   Bingo Blitz Card
-   ========================= */
-.bingo-blitz {
+/* ==================================================
+   CARD VARIANTS (Shared Rules)
+   ================================================== */
+.bingo-blitz,
+.dice-dreams,
+.streaming,
+.bflix-card {
   border-color: #020617;
-}
-
-.bingo-blitz::before {
-  background-image: url("/images/bingo-blitz.jpg");
 }
 
 .bingo-blitz h2,
-.bingo-blitz p {
-  color: #020617;
-  text-shadow: none;
-}
-
-/* =========================
-   Dice Dreams Card
-   ========================= */
-.dice-dreams {
-  border-color: #020617;
-}
-
-.dice-dreams::before {
-  background-image: url("/images/dicedreams.png");
-}
-
+.bingo-blitz p,
 .dice-dreams h2,
 .dice-dreams p {
   color: #020617;
   text-shadow: none;
 }
-/* =========================
-   Streaming Card (Homepage)
-   ========================= */
-.streaming {
-  border-color: #020617;
+
+/* ==================================================
+   CARD BACKGROUNDS
+   ================================================== */
+.bingo-blitz::before {
+  background-image: url("/images/bingo-blitz.jpg");
+}
+
+.dice-dreams::before {
+  background-image: url("/images/dicedreams.png");
 }
 
 .streaming::before {
@@ -153,27 +144,20 @@ body {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
-/* =========================
-   Bflix Card (Streaming Page)
-   ========================= */
-.bflix-card {
-  border-color: #020617;
-}
-
+/* ==================================================
+   BFLIX CARD (Streaming Page)
+   ================================================== */
 .bflix-card::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0.25)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
     url("/images/bflix.png");
   background-size: cover;
   background-position: center;
   opacity: 0.9;
-  z-index: 0;
 }
 
 .bflix-card .bflix-text {
@@ -192,118 +176,66 @@ body {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* =====================
-   Placeholder Card
-   ===================== */
+/* ==================================================
+   PLACEHOLDER CARD
+   ================================================== */
 .placeholder {
   opacity: 0.6;
   pointer-events: none;
 }
 
-/* =====================
-   Footer
-   ===================== */
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 /* ==================================================
-   🏠 HOMEPAGE — FIXED BACKGROUND
+   FIXED BACKGROUND PAGES (Shared)
    ================================================== */
-body.home-page {
-  position: relative;
-  min-height: 100vh;
-}
-
-body.home-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url("/images/homepageig2.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ==================================================
-   🔥 BINGOBLITZ PAGE — FIXED BACKGROUND
-   ================================================== */
-body.bingoblitz-page {
-  position: relative;
-  min-height: 100vh;
-}
-
-body.bingoblitz-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
-    ),
-    url("/images/bb-background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ==================================================
-   🎲 DICE DREAMS PAGE — FIXED BACKGROUND
-   ================================================== */
-body.dicedreams-page {
-  position: relative;
-  min-height: 100vh;
-}
-
-body.dicedreams-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
-    ),
-    url("/images/dicedreamspage.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ==================================================
-   🎬 STREAMING PAGE — FIXED BACKGROUND
-   ================================================== */
+body.home-page,
+body.bingoblitz-page,
+body.dicedreams-page,
 body.streaming-page {
   position: relative;
   min-height: 100vh;
 }
 
+body.home-page::before,
+body.bingoblitz-page::before,
+body.dicedreams-page::before,
 body.streaming-page::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
-    ),
-    url("/images/streaming.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* ===============================
-   Page Content
-   =============================== */
+/* ==================================================
+   PAGE-SPECIFIC BACKGROUNDS
+   ================================================== */
+body.home-page::before {
+  background-image: url("/images/homepageig2.png");
+}
+
+body.bingoblitz-page::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    url("/images/bb-background.jpg");
+}
+
+body.dicedreams-page::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    url("/images/dicedreamspage.png");
+}
+
+body.streaming-page::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    url("/images/streaming.jpg");
+}
+
+/* ==================================================
+   PAGE CONTENT (Shared)
+   ================================================== */
 .streaming-content,
 .bingoblitz-content,
 .dicedreams-content {
@@ -331,47 +263,41 @@ body.streaming-page::before {
   margin-bottom: 2rem;
 }
 
-/* ===============================
-   🆕 BingoBlitz Date & Links
-   =============================== */
-.bb-date {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-
-.bb-links {
-  list-style: none;
-  margin-bottom: 1.75rem;
-  padding: 0;
-}
-
-.bb-links li {
-  margin-bottom: 0.5rem;
-}
-
-/* ===============================
-   🆕 Dice Dreams Date & Links
-   =============================== */
+/* ==================================================
+   DATE & LINKS (Shared)
+   ================================================== */
+.bb-date,
 .daily-date {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
+.bb-links,
 .daily-links {
   list-style: none;
-  margin-bottom: 1.75rem;
   padding: 0;
+  margin-bottom: 1.75rem;
 }
 
+.bb-links li,
 .daily-links li {
   margin-bottom: 0.5rem;
 }
 
-/* ===============================
-   📱 Mobile Optimization
-   =============================== */
+/* ==================================================
+   FOOTER
+   ================================================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ==================================================
+   MOBILE OPTIMIZATION
+   ================================================== */
 @media (max-width: 640px) {
   .header h1 {
     font-size: 2rem;
@@ -387,4 +313,3 @@ body.streaming-page::before {
     font-size: 0.9rem;
   }
 }
-
