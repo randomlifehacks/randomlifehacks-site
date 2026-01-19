@@ -3,7 +3,7 @@ backend:
   repo: randomlifehacks/randomlifehacks-site
   branch: main
   site_domain: randomlifehacks.com
-  auth_type: implicit
+  auth_type: pkce
 
 media_folder: "images"
 public_folder: "/images"
