@@ -2,7 +2,7 @@ backend:
   name: github
   repo: randomlifehacks/randomlifehacks-site
   branch: main
-  site_domain: www.randomlifehacks.com
+  site_domain: randomlifehacks.com
 
 media_folder: "images"
 public_folder: "/images"
