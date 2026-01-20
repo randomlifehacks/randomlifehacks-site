@@ -58,7 +58,7 @@ body {
 }
 
 /* ==================================================
-   BASE CARD (Homepage cards)
+   BASE CARD
    ================================================== */
 .card {
   position: relative;
@@ -203,14 +203,15 @@ body.streaming-page::before {
 }
 
 /* ==================================================
-   DICE DREAMS – CLEAN BOXED TABLE
+   ✅ DICE DREAMS – FINAL FIXED TABLE
    ================================================== */
 
 body.dicedreams-page .dd-row {
-  display: grid;
-  grid-template-columns: 180px 1fr;
+  display: inline-grid;
+  grid-template-columns: max-content max-content;
   align-items: center;
 
+  margin: 0 auto;
   border-bottom: 1px solid #d1d5db;
 }
 
@@ -224,8 +225,9 @@ body.dicedreams-page .dd-row:last-of-type {
 
 body.dicedreams-page .dd-date,
 body.dicedreams-page .dd-links {
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 body.dicedreams-page .dd-date {
@@ -244,7 +246,7 @@ body.dicedreams-page .dd-links a:hover {
 }
 
 /* ==================================================
-   BINGO BLITZ – CLEAN REWARD LAYOUT
+   BINGO BLITZ
    ================================================== */
 
 body.bingoblitz-page .bb-date {
@@ -258,32 +260,12 @@ body.bingoblitz-page .bb-reward-box {
   background: rgba(255, 255, 255, 0.35);
   border: 2px solid rgba(2, 6, 23, 0.35);
   border-radius: 1rem;
-
   padding: 1.25rem 1.75rem;
   margin: 0 auto 2rem;
-
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-
   max-width: 420px;
-}
-
-body.bingoblitz-page .bb-reward-box a {
-  color: #2563eb;
-  font-weight: 600;
-  text-decoration: underline;
-  border-bottom: 1px solid #d9dcd8;
-}
-
-body.bingoblitz-page .bb-reward-box a:hover {
-  color: #1d4ed8;
-}
-
-body.bingoblitz-page .bb-note {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #475569;
 }
 
 /* ==================================================
@@ -294,37 +276,4 @@ footer {
   padding: 2rem;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-/* ==================================================
-   MOBILE
-   ================================================== */
-@media (max-width: 640px) {
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .bb-title,
-  .dd-title,
-  .stream-title {
-    font-size: 1.8rem;
-  }
-
-  body.bingoblitz-page .bb-reward-box {
-    max-width: 100%;
-  }
-
-  body.dicedreams-page .dd-row {
-    display: inline-grid;
-    grid-template-columns: minmax(max-content, max-content) minmax(max-content, max-content);
-    align-items: center;
-
-    margin: 0 auto;
-    border-bottom: 1px solid #d1d5db;
-  }
-
-  body.dicedreams-page .dd-date {
-    border-right: none;
-    border-bottom: 1px solid #d1d5db;
-  }
 }
