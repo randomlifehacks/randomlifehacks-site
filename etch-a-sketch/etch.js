@@ -78,25 +78,30 @@ function submitDrawing() {
 
   const imageData = canvas.toDataURL("image/png");
 
-  fetch("https://etch-submit.packofsimsny.workers.dev", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      username: username,
-      image: imageData
-    })
+   fetch("https://etch-submit.packofsimsny.workers.dev", {
+  method: "POST",
+  mode: "cors",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    username: username,
+    image: imageData
   })
-    .then((res) => {
-      if (!res.ok) throw new Error("Submission failed");
-      return res.json();
-    })
-    .then(() => {
-      alert("Drawing submitted!");
-    })
-    .catch((err) => {
-      console.error(err);
-      alert("Error submitting");
-    });
+})
+.then(res => {
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+  return res.json();
+})
+.then(() => {
+  alert("Drawing submitted!");
+})
+.catch(err => {
+  console.error("Submit failed:", err);
+  alert("Error submitting");
+});
+
 }
+
