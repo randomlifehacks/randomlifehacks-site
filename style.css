@@ -215,7 +215,7 @@ body.bingoblitz-page .bb-date {
 }
 
 /* Shared width across all reward boxes */
-body.bingoblitz-page .bb-links {
+body.bingoblitz-page .bb-reward-box {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
