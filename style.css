@@ -102,6 +102,11 @@ body {
   opacity: 0.35;
 }
 
+.placeholder {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 /* ==================================================
    CARD VARIANTS
    ================================================== */
@@ -200,10 +205,6 @@ body.streaming-page::before {
     url("/images/streaming.jpg");
 }
 
-.placeholder {
-  opacity: 0.6;
-  pointer-events: none;
-}
 
 
 /* ==================================================
