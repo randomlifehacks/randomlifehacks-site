@@ -153,8 +153,8 @@ body.home-page::before {
 
 body.bingoblitz-page::before {
   background-image:
-    linear-gradient(rgba(255,255,255,0.80),
-                    rgba(255,255,255,0.80)),
+    linear-gradient(rgba(255,255,255,0.90),
+                    rgba(255,255,255,0.90)),
     url("/images/bb-background.jpg");
 }
 
