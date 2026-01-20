@@ -58,7 +58,7 @@ body {
 }
 
 /* ==================================================
-   BASE CARD
+   BASE CARD (Homepage cards)
    ================================================== */
 .card {
   position: relative;
@@ -80,6 +80,16 @@ body {
 .card > * {
   position: relative;
   z-index: 1;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .card::before {
@@ -124,22 +134,49 @@ body.streaming-page {
   min-height: 100vh;
 }
 
-body.dicedreams-page::before {
+body.home-page::before,
+body.bingoblitz-page::before,
+body.dicedreams-page::before,
+body.streaming-page::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.home-page::before {
+  background-image: url("/images/homepageig2.png");
+}
+
+body.bingoblitz-page::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.75),
+                    rgba(255, 255, 255, 0.75)),
+    url("/images/bb-background.jpg");
+}
+
+body.dicedreams-page::before {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.75),
                     rgba(255, 255, 255, 0.75)),
     url("/images/dicedreamspage.png");
-  background-size: cover;
-  background-position: center;
+}
+
+body.streaming-page::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.75),
+                    rgba(255, 255, 255, 0.75)),
+    url("/images/streaming.jpg");
 }
 
 /* ==================================================
    PAGE CONTENT
    ================================================== */
+.streaming-content,
+.bingoblitz-content,
 .dicedreams-content {
   max-width: 760px;
   margin: 0 auto;
@@ -147,14 +184,18 @@ body.dicedreams-page::before {
   text-align: center;
 }
 
-.dd-title {
+.bb-title,
+.dd-title,
+.stream-title {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: #020617;
 }
 
-.dd-disclaimer {
+.bb-disclaimer,
+.dd-disclaimer,
+.stream-disclaimer {
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.6;
@@ -162,35 +203,46 @@ body.dicedreams-page::before {
 }
 
 /* ==================================================
-   DICE DREAMS – STRUCTURED DAILY BOXES
+   BINGO BLITZ – CLEAN REWARD LAYOUT
    ================================================== */
 
-.dd-row {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #d1d5db;
-}
-
-.dd-date {
-  text-align: center;
+body.bingoblitz-page .bb-date {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
   font-weight: 700;
   color: #020617;
 }
 
-.dd-links {
-  text-align: center;
+body.bingoblitz-page .bb-reward-box {
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(2, 6, 23, 0.35);
+  border-radius: 1rem;
+
+  padding: 1.25rem 1.75rem;
+  margin: 0 auto 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  max-width: 420px;
 }
 
-.dd-links a {
-  font-weight: 600;
+body.bingoblitz-page .bb-reward-box a {
   color: #2563eb;
+  font-weight: 600;
   text-decoration: underline;
+  border-bottom: 1px solid #d9dcd8;
 }
 
-.dd-links a:hover {
+body.bingoblitz-page .bb-reward-box a:hover {
   color: #1d4ed8;
+}
+
+body.bingoblitz-page .bb-note {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #475569;
 }
 
 /* ==================================================
@@ -207,8 +259,17 @@ footer {
    MOBILE
    ================================================== */
 @media (max-width: 640px) {
-  .dd-row {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .bb-title,
+  .dd-title,
+  .stream-title {
+    font-size: 1.8rem;
+  }
+
+  body.bingoblitz-page .bb-reward-box {
+    max-width: 100%;
   }
 }
