@@ -7,9 +7,9 @@
   --accent: #6366f1;
 }
 
-/* ===============================
+/* ==================================================
    GLOBAL RESET
-================================ */
+   ================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,9 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===============================
+/* ==================================================
    HEADER (Homepage)
-================================ */
+   ================================================== */
 .header {
   text-align: center;
   padding: 4rem 1rem 2rem;
@@ -42,9 +42,9 @@ body {
   color: var(--muted);
 }
 
-/* ===============================
+/* ==================================================
    LAYOUT
-================================ */
+   ================================================== */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -57,9 +57,9 @@ body {
   gap: 1.5rem;
 }
 
-/* ===============================
-   BASE CARD
-================================ */
+/* ==================================================
+   BASE CARD (Homepage cards)
+   ================================================== */
 .card {
   position: relative;
   overflow: hidden;
@@ -75,6 +75,11 @@ body {
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card h2 {
@@ -97,9 +102,16 @@ body {
   opacity: 0.35;
 }
 
-/* ===============================
+/* ==================================================
    CARD VARIANTS
-================================ */
+   ================================================== */
+.bingo-blitz,
+.dice-dreams,
+.streaming,
+.bflix-card {
+  border-color: #020617;
+}
+
 .bingo-blitz::before {
   background-image: url("/images/bingo-blitz.jpg");
 }
@@ -112,9 +124,9 @@ body {
   background-image: url("/images/streaming.jpg");
 }
 
-/* ===============================
+/* ==================================================
    FIXED BACKGROUND PAGES
-================================ */
+   ================================================== */
 body.home-page,
 body.bingoblitz-page,
 body.dicedreams-page,
@@ -142,25 +154,28 @@ body.home-page::before {
 
 body.bingoblitz-page::before {
   background-image:
-    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    linear-gradient(rgba(255, 255, 255, 0.75),
+                    rgba(255, 255, 255, 0.75)),
     url("/images/bb-background.jpg");
 }
 
 body.dicedreams-page::before {
   background-image:
-    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    linear-gradient(rgba(255, 255, 255, 0.75),
+                    rgba(255, 255, 255, 0.75)),
     url("/images/dicedreamspage.png");
 }
 
 body.streaming-page::before {
   background-image:
-    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    linear-gradient(rgba(255, 255, 255, 0.75),
+                    rgba(255, 255, 255, 0.75)),
     url("/images/streaming.jpg");
 }
 
-/* ===============================
+/* ==================================================
    PAGE CONTENT
-================================ */
+   ================================================== */
 .streaming-content,
 .bingoblitz-content,
 .dicedreams-content {
@@ -176,59 +191,74 @@ body.streaming-page::before {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  color: #020617;
 }
 
-/* ===============================
-   BINGO BLITZ – NEW BOX STYLE
-================================ */
-.bb-rewards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.bb-disclaimer,
+.dd-disclaimer,
+.stream-disclaimer {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
-/* DATE — no box, no background */
-.bb-date {
+/* ==================================================
+   BINGO BLITZ – REWARD BOX DESIGN (ISOLATED)
+   ================================================== */
+
+body.bingoblitz-page .bb-date {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
   color: #020617;
 }
 
-/* REWARD BOX */
-.bb-reward-box {
-  width: max-content;
-  padding: 0.9rem 1.25rem;
-  margin-bottom: 1.5rem;
+/* Shared width across all reward boxes */
+body.bingoblitz-page .bb-links {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.75rem;
 
   border: 2px solid rgba(2, 6, 23, 0.55);
-  border-radius: 0.9rem;
+  border-radius: 1rem;
 
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(2px);
 
-  text-align: center;
+  width: fit-content;
+  min-width: 340px; /* keeps boxes uniform */
 }
 
-.bb-reward-box a {
-  color: #2563eb;           
+/* Reward links */
+body.bingoblitz-page .bb-links li {
+  list-style: none;
+  margin: 0.25rem 0;
+}
+
+body.bingoblitz-page .bb-links a {
+  color: #2563eb;
   text-decoration: underline;
   font-weight: 600;
 }
 
-.bb-reward-box a:hover {
+body.bingoblitz-page .bb-links a:hover {
   color: #1d4ed8;
 }
 
-.bb-note {
+/* Extra note text */
+body.bingoblitz-page .bb-note {
+  margin-top: 0.5rem;
   font-size: 0.85rem;
-  color: #334155;
-  margin-top: 0.25rem;
+  color: #475569;
 }
 
-/* ===============================
+/* ==================================================
    FOOTER
-================================ */
+   ================================================== */
 footer {
   text-align: center;
   padding: 2rem;
@@ -236,9 +266,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===============================
+/* ==================================================
    MOBILE
-================================ */
+   ================================================== */
 @media (max-width: 640px) {
   .header h1 {
     font-size: 2rem;
@@ -249,4 +279,10 @@ footer {
   .stream-title {
     font-size: 1.8rem;
   }
+
+  body.bingoblitz-page .bb-links {
+    min-width: auto;
+    width: 100%;
+  }
 }
+
