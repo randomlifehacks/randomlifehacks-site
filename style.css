@@ -58,7 +58,7 @@ body {
 }
 
 /* ==================================================
-   BASE CARD
+   BASE CARD (Homepage cards)
    ================================================== */
 .card {
   position: relative;
@@ -153,22 +153,22 @@ body.home-page::before {
 
 body.bingoblitz-page::before {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.75),
-                    rgba(255, 255, 255, 0.75)),
+    linear-gradient(rgba(255,255,255,0.75),
+                    rgba(255,255,255,0.75)),
     url("/images/bb-background.jpg");
 }
 
 body.dicedreams-page::before {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.75),
-                    rgba(255, 255, 255, 0.75)),
+    linear-gradient(rgba(255,255,255,0.75),
+                    rgba(255,255,255,0.75)),
     url("/images/dicedreamspage.png");
 }
 
 body.streaming-page::before {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.75),
-                    rgba(255, 255, 255, 0.75)),
+    linear-gradient(rgba(255,255,255,0.75),
+                    rgba(255,255,255,0.75)),
     url("/images/streaming.jpg");
 }
 
@@ -203,31 +203,26 @@ body.streaming-page::before {
 }
 
 /* ==================================================
-   ✅ DICE DREAMS – FINAL FIXED TABLE
+   ✅ DICE DREAMS – SINGLE BOX TABLE (MATCHES DRAWING)
    ================================================== */
 
-body.dicedreams-page .dd-row {
+body.dicedreams-page .dd-table {
   display: inline-grid;
   grid-template-columns: max-content max-content;
-  align-items: center;
-
-  margin: 0 auto;
-  border-bottom: 1px solid #d1d5db;
+  border: 1px solid #000;
+  margin: 0 auto 2rem;
 }
 
-body.dicedreams-page .dd-row:first-of-type {
-  border-top: 1px solid #000;
-}
-
-body.dicedreams-page .dd-row:last-of-type {
-  border-bottom: 1px solid #000;
+body.dicedreams-page .dd-row {
+  display: contents;
 }
 
 body.dicedreams-page .dd-date,
 body.dicedreams-page .dd-links {
-  padding: 1rem 1.25rem;
+  padding: 0.9rem 1.25rem;
   text-align: center;
   white-space: nowrap;
+  border-bottom: 1px solid #d1d5db;
 }
 
 body.dicedreams-page .dd-date {
@@ -245,10 +240,15 @@ body.dicedreams-page .dd-links a:hover {
   color: #1d4ed8;
 }
 
-/* ==================================================
-   BINGO BLITZ
-   ================================================== */
+/* remove bottom border on last row */
+body.dicedreams-page .dd-row:last-child .dd-date,
+body.dicedreams-page .dd-row:last-child .dd-links {
+  border-bottom: none;
+}
 
+/* ==================================================
+   BINGO BLITZ – CLEAN REWARD LAYOUT
+   ================================================== */
 body.bingoblitz-page .bb-date {
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
@@ -257,8 +257,8 @@ body.bingoblitz-page .bb-date {
 }
 
 body.bingoblitz-page .bb-reward-box {
-  background: rgba(255, 255, 255, 0.35);
-  border: 2px solid rgba(2, 6, 23, 0.35);
+  background: rgba(255,255,255,0.35);
+  border: 2px solid rgba(2,6,23,0.35);
   border-radius: 1rem;
   padding: 1.25rem 1.75rem;
   margin: 0 auto 2rem;
@@ -266,6 +266,22 @@ body.bingoblitz-page .bb-reward-box {
   flex-direction: column;
   gap: 0.4rem;
   max-width: 420px;
+}
+
+body.bingoblitz-page .bb-reward-box a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+body.bingoblitz-page .bb-reward-box a:hover {
+  color: #1d4ed8;
+}
+
+body.bingoblitz-page .bb-note {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #475569;
 }
 
 /* ==================================================
@@ -276,4 +292,23 @@ footer {
   padding: 2rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+@media (max-width: 640px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .bb-title,
+  .dd-title,
+  .stream-title {
+    font-size: 1.8rem;
+  }
+
+  body.bingoblitz-page .bb-reward-box {
+    max-width: 100%;
+  }
 }
