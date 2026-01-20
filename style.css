@@ -200,6 +200,12 @@ body.streaming-page::before {
     url("/images/streaming.jpg");
 }
 
+.placeholder {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+
 /* ==================================================
    PAGE CONTENT
    ================================================== */
