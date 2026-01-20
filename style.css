@@ -303,6 +303,11 @@ body.bingoblitz-page .bb-reward-box a {
   text-decoration: underline;
 }
 
+body.bingoblitz-page .bb-reward-box a {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #d1d5db; /* light gray */
+}
+
 body.bingoblitz-page .bb-reward-box a:hover {
   color: #1d4ed8;
 }
