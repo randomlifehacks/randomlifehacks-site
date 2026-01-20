@@ -123,6 +123,10 @@ body {
   background-image: url("/images/streaming.jpg");
 }
 
+.bflix-card::before {
+  background-image: url("/images/bflix.png");
+  opacity: 0.35; 
+
 /* ==================================================
    FIXED BACKGROUND PAGES
    ================================================== */
