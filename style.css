@@ -124,9 +124,32 @@ body {
 }
 
 .bflix-card::before {
-  background-image: url("/images/bflix.png");
-  opacity: 0.9; 
-  border: 2px solid var(--border);
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("/images/bflix.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+.bflix-card .bflix-text {
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.75rem;
+  background: rgba(43, 9, 22, 0.88);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.bflix-card h2,
+.bflix-card p {
+  color: #f8fafc;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 /* ==================================================
    FIXED BACKGROUND PAGES
