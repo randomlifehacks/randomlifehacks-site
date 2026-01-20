@@ -234,6 +234,11 @@ body.bingoblitz-page .bb-reward-box a {
   text-decoration: underline;
 }
 
+
+body.bingoblitz-page .bb-reward-box a:not(:last-of-type) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
 body.bingoblitz-page .bb-reward-box a:hover {
   color: #1d4ed8;
 }
