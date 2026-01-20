@@ -315,8 +315,14 @@ footer {
   }
 
   body.dicedreams-page .dd-row {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+
+    margin: 0 auto;
+    border-bottom: 1px solid #d1d5db;
   }
+
 
   body.dicedreams-page .dd-date {
     border-right: none;
