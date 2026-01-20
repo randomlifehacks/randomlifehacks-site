@@ -78,7 +78,7 @@ function submitDrawing() {
 
   const imageData = canvas.toDataURL("image/png");
 
-   fetch("https://etch-submit.packofsimsny.workers.dev", {
+   fetch("https://etch-submit.packofsinsny.workers.dev", {
   method: "POST",
   mode: "cors",
   headers: {
@@ -104,4 +104,5 @@ function submitDrawing() {
 });
 
 }
+
 
