@@ -200,13 +200,13 @@ body.streaming-page::before {
 }
 
 .bb-reward-box a {
-  text-decoration: none;
+  color: #2563eb;           
+  text-decoration: underline;
   font-weight: 600;
-  color: #020617;
 }
 
 .bb-reward-box a:hover {
-  text-decoration: underline;
+  color: #1d4ed8;
 }
 
 .bb-note {
