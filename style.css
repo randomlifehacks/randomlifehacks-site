@@ -107,8 +107,7 @@ body {
    ================================================== */
 .bingo-blitz,
 .dice-dreams,
-.streaming,
-.bflix-card {
+.streaming {
   border-color: #020617;
 }
 
@@ -179,7 +178,7 @@ body.streaming-page::before {
 .streaming-content,
 .bingoblitz-content,
 .dicedreams-content {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 1.25rem;
   text-align: center;
@@ -204,52 +203,41 @@ body.streaming-page::before {
 }
 
 /* ==================================================
-   BINGO BLITZ – REWARD BOX DESIGN (ISOLATED)
+   BINGO BLITZ – CLEAN REWARD LAYOUT
    ================================================== */
 
 body.bingoblitz-page .bb-date {
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
   font-weight: 700;
   color: #020617;
 }
 
-/* Shared width across all reward boxes */
 body.bingoblitz-page .bb-reward-box {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 1rem 1.4rem;
-  margin-bottom: 1.75rem;
-
-  border: 2px solid rgba(2, 6, 23, 0.55);
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(2, 6, 23, 0.35);
   border-radius: 1rem;
 
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(2px);
+  padding: 1.25rem 1.75rem;
+  margin: 0 auto 2rem;
 
-  width: fit-content;
-  min-width: 340px; /* keeps boxes uniform */
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  max-width: 420px;
 }
 
-/* Reward links */
-body.bingoblitz-page .bb-links li {
-  list-style: none;
-  margin: 0.25rem 0;
-}
-
-body.bingoblitz-page .bb-links a {
+body.bingoblitz-page .bb-reward-box a {
   color: #2563eb;
-  text-decoration: underline;
   font-weight: 600;
+  text-decoration: underline;
 }
 
-body.bingoblitz-page .bb-links a:hover {
+body.bingoblitz-page .bb-reward-box a:hover {
   color: #1d4ed8;
 }
 
-/* Extra note text */
 body.bingoblitz-page .bb-note {
   margin-top: 0.5rem;
   font-size: 0.85rem;
@@ -280,68 +268,7 @@ footer {
     font-size: 1.8rem;
   }
 
-  body.bingoblitz-page .bb-links {
-    min-width: auto;
-    width: 100%;
-  }
-}
-
-/* ==================================================
-   BINGO BLITZ – UNIFORM REWARD BOXES (ISOLATED)
-   ================================================== */
-
-body.bingoblitz-page .bb-date {
-  margin-top: 2.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  color: #020617;
-}
-
-/* Reward container */
-body.bingoblitz-page .bb-reward-box {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 1rem 1.6rem;
-  margin-bottom: 1.75rem;
-
-  border: 2px solid rgba(2, 6, 23, 0.55);
-  border-radius: 1rem;
-
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(2px);
-
-  width: fit-content;
-  min-width: 360px; /* forces uniform width */
-}
-
-/* Links inside box */
-body.bingoblitz-page .bb-reward-box a {
-  margin: 0.25rem 0;
-  color: #2563eb;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-body.bingoblitz-page .bb-reward-box a:hover {
-  color: #1d4ed8;
-}
-
-/* Note text */
-body.bingoblitz-page .bb-note {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #475569;
-  text-align: center;
-}
-
-/* Mobile */
-@media (max-width: 640px) {
   body.bingoblitz-page .bb-reward-box {
-    width: 100%;
-    min-width: unset;
+    max-width: 100%;
   }
 }
-
-
