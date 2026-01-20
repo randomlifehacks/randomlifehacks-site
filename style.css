@@ -125,7 +125,7 @@ body {
 
 .bflix-card::before {
   background-image: url("/images/bflix.png");
-  opacity: 0.8; 
+  opacity: 0.9; 
 }
 /* ==================================================
    FIXED BACKGROUND PAGES
