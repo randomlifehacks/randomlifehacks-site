@@ -1,15 +1,13 @@
 :root {
   --bg: #fafafa;
-  --card: #ffffff;
   --text: #0f172a;
   --muted: #64748b;
   --border: #e5e7eb;
-  --accent: #6366f1;
 }
 
-/* ==================================================
-   GLOBAL RESET
-   ================================================== */
+/* ===============================
+   RESET
+   =============================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,280 +16,66 @@
 }
 
 body {
-  background: var(--bg);
   color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
 }
 
-/* ==================================================
-   HEADER (Homepage)
-   ================================================== */
-.header {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.header p {
-  margin-top: 0.5rem;
-  color: var(--muted);
-}
-
-/* ==================================================
-   LAYOUT
-   ================================================== */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-/* ==================================================
-   BASE CARD (Shared)
-   ================================================== */
-.card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-  padding: 2rem;
-  text-decoration: none;
-  color: inherit;
-  border: 2px solid var(--border);
-  background: rgba(255, 255, 255, 0.85);
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-
-.card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.card h2 {
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.35;
-}
-
-/* ==================================================
-   CARD VARIANTS (Shared Rules)
-   ================================================== */
-.bingo-blitz,
-.dice-dreams,
-.streaming,
-.bflix-card {
-  border-color: #020617;
-}
-
-.bingo-blitz h2,
-.bingo-blitz p,
-.dice-dreams h2,
-.dice-dreams p {
-  color: #020617;
-  text-shadow: none;
-}
-
-/* ==================================================
-   CARD BACKGROUNDS
-   ================================================== */
-.bingo-blitz::before {
-  background-image: url("/images/bingo-blitz.jpg");
-}
-
-.dice-dreams::before {
-  background-image: url("/images/dicedreams.png");
-}
-
-.streaming::before {
-  background-image: url("/images/streaming.jpg");
-}
-
-.streaming h2,
-.streaming p {
-  color: #020617;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
-}
-
-/* ==================================================
-   BFLIX CARD (Streaming Page)
-   ================================================== */
-.bflix-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("/images/bflix.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.9;
-}
-
-.bflix-card .bflix-text {
-  display: inline-block;
-  padding: 0.9rem 1.2rem;
-  border-radius: 0.75rem;
-  background: rgba(43, 9, 22, 0.88);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
-.bflix-card h2,
-.bflix-card p {
-  color: #f8fafc;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-
-/* ==================================================
-   PLACEHOLDER CARD
-   ================================================== */
-.placeholder {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* ==================================================
-   FIXED BACKGROUND PAGES (Shared)
-   ================================================== */
-body.home-page,
-body.bingoblitz-page,
-body.dicedreams-page,
-body.streaming-page {
-  position: relative;
-  min-height: 100vh;
-}
-
-body.home-page::before,
-body.bingoblitz-page::before,
-body.dicedreams-page::before,
-body.streaming-page::before {
+/* ===============================
+   FIXED BACKGROUNDS
+   =============================== */
+body.bingoblitz-page::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    url("/images/bb-background.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* ==================================================
-   PAGE-SPECIFIC BACKGROUNDS
-   ================================================== */
-body.home-page::before {
-  background-image: url("/images/homepageig2.png");
-}
-
-body.bingoblitz-page::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
-    url("/images/bb-background.jpg");
-}
-
-body.dicedreams-page::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
-    url("/images/dicedreamspage.png");
-}
-
-body.streaming-page::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
-    url("/images/streaming.jpg");
-}
-
-/* ==================================================
-   PAGE CONTENT (Shared)
-   ================================================== */
-.streaming-content,
-.bingoblitz-content,
-.dicedreams-content {
+/* ===============================
+   LAYOUT
+   =============================== */
+.container {
   max-width: 720px;
-  margin: 0 auto;
+  margin: auto;
   padding: 1.25rem;
   text-align: center;
 }
 
-.stream-title,
-.bb-title,
-.dd-title {
+/* ===============================
+   TITLES & TEXT
+   =============================== */
+.bb-title {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #020617;
 }
 
-.stream-disclaimer,
-.bb-disclaimer,
-.dd-disclaimer {
+.bb-disclaimer {
   font-size: 0.95rem;
   color: #475569;
-  line-height: 1.6;
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-/* ==================================================
-   DATE & LINKS (Shared)
-   ================================================== */
-.bb-date,
-.daily-date {
+.bb-date {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
-.bb-links,
-.daily-links {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.75rem;
-}
-
-.bb-links li,
-.daily-links li {
-  margin-bottom: 0.5rem;
-}
-
-/* ==================================================
-   Bingo Blitz – Translucent Line Boxes
-   ================================================== */
-
+/* ===============================
+   REWARD BOX (NEW STYLE)
+   =============================== */
 .bb-reward-box {
-  display: inline-block;              /* width = longest line */
+  display: inline-block;
   margin: 0 auto 2rem;
   padding: 0.75rem 1.25rem;
 
-  background: rgba(255, 255, 255, 0.15);  /* translucent */
+  background: rgba(255, 255, 255, 0.15);
   border: 1.5px solid rgba(15, 23, 42, 0.35);
   border-radius: 0.75rem;
 
@@ -303,8 +87,8 @@ body.streaming-page::before {
   display: block;
   padding: 0.35rem 0;
   font-weight: 600;
-  text-decoration: underline;
   color: #1e3a8a;
+  text-decoration: underline;
 }
 
 .bb-reward-box a:not(:last-of-type) {
@@ -318,9 +102,9 @@ body.streaming-page::before {
   color: #334155;
 }
 
-/* ==================================================
+/* ===============================
    FOOTER
-   ================================================== */
+   =============================== */
 footer {
   text-align: center;
   padding: 2rem;
@@ -328,21 +112,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ==================================================
-   MOBILE OPTIMIZATION
-   ================================================== */
-@media (max-width: 640px) {
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .bb-title,
-  .stream-title {
-    font-size: 1.8rem;
-  }
-
-  .bb-disclaimer,
-  .stream-disclaimer {
-    font-size: 0.9rem;
-  }
+.bb-back {
+  margin-top: 2rem;
 }
+
