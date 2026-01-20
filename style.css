@@ -232,10 +232,6 @@ body.bingoblitz-page .bb-reward-box a {
   color: #2563eb;
   font-weight: 600;
   text-decoration: underline;
-}
-
-
-body.bingoblitz-page .bb-reward-box a:not(:last-of-type) {
   border-bottom: 1px solid #e5e7eb;
 }
 
