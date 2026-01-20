@@ -207,6 +207,7 @@ body.streaming-page::before {
    ================================================== */
 
 body.dicedreams-page .dd-table {
+  background: rgba(255,255,255,0.35);
   display: inline-grid;
   grid-template-columns: max-content max-content;
   border: 1px solid #000;
