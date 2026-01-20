@@ -203,6 +203,47 @@ body.streaming-page::before {
 }
 
 /* ==================================================
+   DICE DREAMS – CLEAN BOXED TABLE
+   ================================================== */
+
+body.dicedreams-page .dd-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+
+  border-bottom: 1px solid #d1d5db;
+}
+
+body.dicedreams-page .dd-row:first-of-type {
+  border-top: 1px solid #000;
+}
+
+body.dicedreams-page .dd-row:last-of-type {
+  border-bottom: 1px solid #000;
+}
+
+body.dicedreams-page .dd-date,
+body.dicedreams-page .dd-links {
+  padding: 1rem;
+  text-align: center;
+}
+
+body.dicedreams-page .dd-date {
+  font-weight: 700;
+  border-right: 1px solid #d1d5db;
+}
+
+body.dicedreams-page .dd-links a {
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+body.dicedreams-page .dd-links a:hover {
+  color: #1d4ed8;
+}
+
+/* ==================================================
    BINGO BLITZ – CLEAN REWARD LAYOUT
    ================================================== */
 
@@ -271,5 +312,14 @@ footer {
 
   body.bingoblitz-page .bb-reward-box {
     max-width: 100%;
+  }
+
+  body.dicedreams-page .dd-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.dicedreams-page .dd-date {
+    border-right: none;
+    border-bottom: 1px solid #d1d5db;
   }
 }
