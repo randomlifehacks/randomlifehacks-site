@@ -315,6 +315,17 @@ body.bingoblitz-page .bb-reward-box a {
   border-bottom: 1px solid #d1d5db; /* light gray */
 }
 
+/* Bingo Blitz links - default */
+body.bingoblitz-page .bb-reward-box a {
+  color: #2563eb;
+}
+
+/* After link has been clicked */
+body.bingoblitz-page .bb-reward-box a:visited {
+  color: #7c3aed; /* purple */
+}
+
+
 body.bingoblitz-page .bb-reward-box a:hover {
   color: #1d4ed8;
 }
