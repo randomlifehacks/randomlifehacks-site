@@ -51,13 +51,12 @@ body {
   padding: 2rem;
 }
 
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 240px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
 }
-
 
 
 /* ==================================================
