@@ -111,8 +111,6 @@ body.home-page .card {
 
 .coming-soon::before {
   background-image: url("/images/comingsoonhomepage.png");
-  background-size: cover;
-  background-position: center;
   opacity: 0.45; 
 }
 
@@ -150,15 +148,9 @@ body.home-page .card {
 }
 
 .bflix-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
     url("/images/bflix.png");
-  background-size: cover;
-  background-position: center;
   opacity: 0.9;
 }
 
@@ -455,5 +447,3 @@ footer {
     justify-content: center;
   }
 }
-
-
