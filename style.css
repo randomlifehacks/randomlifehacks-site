@@ -282,10 +282,11 @@ body.bean-page .bean-section-title {
 
 body.bean-page .bean-grid {
   display: grid;
-  grid-template-columns: repeat(3, 240px);
+  grid-template-columns: repeat(auto-fit, 240px);
   gap: 1.75rem;
   justify-content: center;
 }
+
 
 
 body.bean-page .bean-item {
@@ -293,12 +294,14 @@ body.bean-page .bean-item {
   width: 240px;
 }
 
+
 body.bean-page .bean-item img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1; /* keeps everything visually consistent */
   object-fit: contain;
   border: 1px solid #000;
+  border-radius: 12px;
+  background: white;
   display: block;
 }
 
