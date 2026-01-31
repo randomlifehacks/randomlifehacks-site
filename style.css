@@ -126,13 +126,10 @@ body.home-page .card {
 /* ==================================================
    CARD VARIANTS
    ================================================== */
+.dress-bean,
 .bingo-blitz,
 .dice-dreams,
 .streaming {
-  border-color: #020617;
-}
-
-.dress-bean {
   border-color: #020617;
 }
 
