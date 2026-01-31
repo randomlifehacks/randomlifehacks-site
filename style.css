@@ -455,7 +455,7 @@ footer {
 
   body.home-page .card {
     aspect-ratio: auto;
-    min-height: 140px;
+    height: 140px;
   }
 
   .header h1 {
