@@ -118,7 +118,11 @@ body.home-page .card {
 .placeholder {
   opacity: 0.6;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 
 /* ==================================================
    CARD VARIANTS
