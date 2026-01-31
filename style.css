@@ -202,7 +202,7 @@ body.bean-page::before {
   background-image:
     linear-gradient(rgba(255,255,255,0.60),
                     rgba(255,255,255,0.60)),
-    url("/images/beanpage.png");
+    url("/images/beanhp.png");
 }
 
 body.bingoblitz-page::before {
