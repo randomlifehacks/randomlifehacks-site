@@ -51,10 +51,9 @@ body {
   padding: 2rem;
 }
 
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
