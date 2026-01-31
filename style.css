@@ -116,10 +116,6 @@ body {
   border-color: #020617;
 }
 
-/* ==================================================
-   DRESS BEAN CARD
-   ================================================== */
-
 .dress-bean {
   border-color: #020617;
 }
@@ -240,6 +236,11 @@ body.streaming-page::before {
   padding: 1.25rem;
   text-align: center;
 }
+/* Widen content only on the Bean page */
+body.bean-page .bingoblitz-content {
+  max-width: 1000px;
+}
+
 
 .bb-title,
 .dd-title,
@@ -287,13 +288,10 @@ body.bean-page .bean-grid {
   justify-content: center;
 }
 
-
-
 body.bean-page .bean-item {
   text-align: center;
   width: 240px;
 }
-
 
 body.bean-page .bean-item img {
   width: 100%;
