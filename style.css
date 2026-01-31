@@ -162,7 +162,7 @@ body.home-page .card {
 }
 
 .bflix-card .bflix-text {
-  display: inline-block;
+  display: block;
   padding: 0.9rem 1.2rem;
   border-radius: 0.75rem;
   background: rgba(43, 9, 22, 0.88);
@@ -235,7 +235,6 @@ body.streaming-page::before {
 }
 
 
-
 /* ==================================================
    PAGE CONTENT
    ================================================== */
@@ -251,7 +250,6 @@ body.streaming-page::before {
 body.bean-page .bingoblitz-content {
   max-width: 1000px;
 }
-
 
 .bb-title,
 .dd-title,
@@ -292,8 +290,6 @@ body.bean-page .bean-section-title {
   color: #020617;
 }
 
-
-
 body.bean-page .bean-grid {
   display: flex;
   flex-wrap: wrap;
@@ -302,8 +298,6 @@ body.bean-page .bean-grid {
   max-width: calc(3 * 240px + 2 * 1.75rem);
   margin: 0 auto;
 }
-
-
 
 body.bean-page .bean-item {
   text-align: center;
