@@ -116,6 +116,19 @@ body {
   border-color: #020617;
 }
 
+/* ==================================================
+   DRESS BEAN CARD
+   ================================================== */
+
+.dress-bean {
+  border-color: #020617;
+}
+
+.dress-bean::before {
+  background-image: url("/images/beanhp.png");
+}
+
+
 .bingo-blitz::before {
   background-image: url("/images/bingo-blitz.jpg");
 }
