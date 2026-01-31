@@ -492,6 +492,9 @@ footer {
 
   body.home-page .placeholder p {
     max-width: 90%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
+
 
