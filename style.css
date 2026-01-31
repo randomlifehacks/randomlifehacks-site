@@ -261,7 +261,7 @@ body.streaming-page::before {
 
 /* Reduce header spacing on Bean page */
 body.bean-page .header {
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
 }
 
 
