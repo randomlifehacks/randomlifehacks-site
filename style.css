@@ -264,6 +264,52 @@ body.bean-page .header {
   padding-bottom: 0.05rem;
 }
 
+/* ==================================================
+   BEAN PAGE ASSETS
+   ================================================== */
+
+body.bean-page .bean-assets {
+  margin-top: 3rem;
+}
+
+body.bean-page .bean-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.25rem;
+  text-align: center;
+  color: #020617;
+}
+
+body.bean-page .bean-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.75rem;
+  justify-items: center;
+}
+
+body.bean-page .bean-item {
+  text-align: center;
+}
+
+body.bean-page .bean-item img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #000;
+  display: block;
+}
+
+body.bean-page .bean-item a {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+body.bean-page .bean-item a:hover {
+  color: #1d4ed8;
+}
+
 
 /* ==================================================
    ✅ DICE DREAMS – SINGLE BOX TABLE (MATCHES DRAWING)
