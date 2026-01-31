@@ -6,7 +6,6 @@
   --border: #e5e7eb;
   --accent: #6366f1;
 }
-
 /* ==================================================
    GLOBAL RESET
    ================================================== */
@@ -23,7 +22,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /* ==================================================
    HEADER (Homepage)
    ================================================== */
@@ -41,7 +39,6 @@ body {
   margin-top: 0.5rem;
   color: var(--muted);
 }
-
 /* ==================================================
    LAYOUT
    ================================================== */
@@ -63,9 +60,6 @@ body.streaming-page .grid {
   grid-template-columns: 1fr;
   max-width: 100%;
 }
-
-
-
 /* ==================================================
    BASE CARD (Homepage cards)
    ================================================== */
@@ -115,14 +109,12 @@ body.home-page .card {
   opacity: 0.35;
 }
 
-
 .coming-soon::before {
   background-image: url("/images/comingsoonhomepage.png");
   background-size: cover;
   background-position: center;
   opacity: 0.45; 
 }
-
 
 .placeholder {
   opacity: 0.6;
@@ -131,8 +123,6 @@ body.home-page .card {
   flex-direction: column;
   justify-content: center;
 }
-
-
 /* ==================================================
    CARD VARIANTS
    ================================================== */
@@ -149,7 +139,6 @@ body.home-page .card {
 .dress-bean::before {
   background-image: url("/images/beanhp.png");
 }
-
 
 .bingo-blitz::before {
   background-image: url("/images/bingo-blitz.jpg");
@@ -253,8 +242,6 @@ body.streaming-page::before {
                     rgba(255,255,255,0.75)),
     url("/images/streaming.jpg");
 }
-
-
 /* ==================================================
    PAGE CONTENT
    ================================================== */
@@ -293,11 +280,9 @@ body.bean-page .bingoblitz-content {
 body.bean-page .header {
   padding-bottom: 0.05rem;
 }
-
 /* ==================================================
    BEAN PAGE ASSETS
    ================================================== */
-
 body.bean-page .bean-assets {
   margin-top: 3rem;
 }
@@ -345,12 +330,9 @@ body.bean-page .bean-item a {
 body.bean-page .bean-item a:hover {
   color: #1d4ed8;
 }
-
-
 /* ==================================================
    ✅ DICE DREAMS – SINGLE BOX TABLE (MATCHES DRAWING)
    ================================================== */
-
 body.dicedreams-page .dd-table {
   background: rgba(255,255,255,0.35);
   display: inline-grid;
@@ -391,7 +373,6 @@ body.dicedreams-page .dd-row:last-child .dd-date,
 body.dicedreams-page .dd-row:last-child .dd-links {
   border-bottom: none;
 }
-
 /* ==================================================
    BINGO BLITZ – CLEAN REWARD LAYOUT
    ================================================== */
@@ -418,16 +399,8 @@ body.bingoblitz-page .bb-reward-box a {
   color: #2563eb;
   font-weight: 600;
   text-decoration: underline;
-}
-
-body.bingoblitz-page .bb-reward-box a {
   padding: 0.35rem 0;
   border-bottom: 1px solid #d1d5db; /* light gray */
-}
-
-
-body.bingoblitz-page .bb-reward-box a {
-  color: #2563eb;
 }
 
 /* After link has been clicked */
@@ -445,7 +418,6 @@ body.bingoblitz-page .bb-note {
   font-size: 0.85rem;
   color: #475569;
 }
-
 /* ==================================================
    FOOTER
    ================================================== */
@@ -455,13 +427,10 @@ footer {
   color: var(--muted);
   font-size: 0.9rem;
 }
-
 /* ==================================================
    MOBILE
    ================================================== */
-
 @media (max-width: 640px) {
-
   body.home-page .card {
     aspect-ratio: auto;
     height: 160px;
@@ -480,8 +449,7 @@ footer {
   body.bingoblitz-page .bb-reward-box {
     max-width: 100%;
   }
-
-  /* Homepage grid: 2 cards per row on mobile */
+  
   body.home-page .grid {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
     max-width: 100%;
