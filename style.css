@@ -282,18 +282,22 @@ body.bean-page .bean-section-title {
 
 body.bean-page .bean-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 240px);
   gap: 1.75rem;
-  justify-items: center;
+  justify-content: center;
 }
+
 
 body.bean-page .bean-item {
   text-align: center;
+  width: 240px;
 }
 
 body.bean-page .bean-item img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  aspect-ratio: 1 / 1; /* keeps everything visually consistent */
+  object-fit: contain;
   border: 1px solid #000;
   display: block;
 }
