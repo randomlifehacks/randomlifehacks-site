@@ -259,6 +259,12 @@ body.streaming-page::before {
   margin-bottom: 2rem;
 }
 
+/* Reduce header spacing on Bean page */
+body.bean-page .header {
+  padding-bottom: 0.75rem;
+}
+
+
 /* ==================================================
    ✅ DICE DREAMS – SINGLE BOX TABLE (MATCHES DRAWING)
    ================================================== */
