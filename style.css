@@ -282,14 +282,16 @@ body.bean-page .bean-section-title {
 }
 
 
+
 body.bean-page .bean-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 240px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.75rem;
   max-width: calc(3 * 240px + 2 * 1.75rem);
   margin: 0 auto;
-  justify-items: center;
 }
+
 
 
 body.bean-page .bean-item {
