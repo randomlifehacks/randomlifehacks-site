@@ -281,13 +281,18 @@ body.bean-page .bean-section-title {
   color: #020617;
 }
 
-/* Backgrounds: fixed layout */
+
+
 body.bean-page .bean-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+  grid-template-columns: repeat(auto-fit, 240px);
   gap: 1.75rem;
-  justify-content: center;
+
+  /* THIS IS THE MAGIC */
+  max-width: calc(3 * 240px + 2 * 1.75rem);
+  margin: 0 auto;
 }
+
 
 body.bean-page .bean-item {
   text-align: center;
