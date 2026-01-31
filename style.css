@@ -52,10 +52,14 @@ body {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+  max-width: calc(3 * 240px + 2 * 1.5rem);
+  margin: 0 auto;
 }
+
 
 /* ==================================================
    BASE CARD (Homepage cards)
