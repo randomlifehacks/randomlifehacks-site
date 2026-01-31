@@ -182,6 +182,7 @@ body.streaming-page {
 }
 
 body.home-page::before,
+body.bean-page::before,
 body.bingoblitz-page::before,
 body.dicedreams-page::before,
 body.streaming-page::before {
