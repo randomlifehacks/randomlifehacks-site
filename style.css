@@ -120,7 +120,7 @@ body.home-page .card {
   background-image: url("/images/comingsoonhomepage.png");
   background-size: cover;
   background-position: center;
-  opacity: 0.35; /* match other cards */
+  opacity: 0.45; 
 }
 
 
