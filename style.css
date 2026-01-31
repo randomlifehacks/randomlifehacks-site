@@ -480,4 +480,18 @@ footer {
     margin-right: auto;
     justify-content: center;
   }
+
+  body.home-page .placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  body.home-page .placeholder p {
+    max-width: 90%;
+  }
 }
+
