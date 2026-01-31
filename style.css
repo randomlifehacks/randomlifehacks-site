@@ -173,6 +173,7 @@ body {
    FIXED BACKGROUND PAGES
    ================================================== */
 body.home-page,
+body.bean-page,
 body.bingoblitz-page,
 body.dicedreams-page,
 body.streaming-page {
@@ -195,6 +196,13 @@ body.streaming-page::before {
 
 body.home-page::before {
   background-image: url("/images/homepageig2.png");
+}
+
+body.bean-page::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.60),
+                    rgba(255,255,255,0.60)),
+    url("/images/beanpage.png");
 }
 
 body.bingoblitz-page::before {
