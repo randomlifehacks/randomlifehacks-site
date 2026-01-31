@@ -452,6 +452,11 @@ footer {
    ================================================== */
 
 @media (max-width: 640px) {
+
+  body.home-page .card {
+    aspect-ratio: auto;   /* turn off proportional scaling */
+    height: 140px;        /* same visual height as desktop cards */
+  }
   .header h1 {
     font-size: 2rem;
   }
@@ -467,8 +472,9 @@ footer {
   }
 
   /* Homepage grid: 2 cards per row on mobile */
-  .grid {
+  body.home-page .grid {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
     max-width: 100%;
   }
 }
+
