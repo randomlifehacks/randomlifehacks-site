@@ -60,6 +60,7 @@ body {
 }
 
 body.streaming-page .grid {
+  grid-template-columns: 1fr;
   max-width: 100%;
 }
 
@@ -82,8 +83,6 @@ body.streaming-page .grid {
 
 body.home-page .card {
   aspect-ratio: 16 / 9;
-}
-
 }
 
 .card:hover {
