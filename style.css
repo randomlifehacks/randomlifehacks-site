@@ -284,14 +284,9 @@ body.bean-page .bean-section-title {
 /* Backgrounds: fixed layout */
 body.bean-page .bean-grid {
   display: grid;
-  grid-template-columns: repeat(3, 240px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
   gap: 1.75rem;
   justify-content: center;
-}
-
-/* Clothes: auto-center last row */
-body.bean-page .bean-grid-clothes {
-  grid-template-columns: repeat(auto-fit, 240px);
 }
 
 body.bean-page .bean-item {
