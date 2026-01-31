@@ -450,6 +450,7 @@ footer {
 /* ==================================================
    MOBILE
    ================================================== */
+
 @media (max-width: 640px) {
   .header h1 {
     font-size: 2rem;
@@ -464,4 +465,11 @@ footer {
   body.bingoblitz-page .bb-reward-box {
     max-width: 100%;
   }
+
+  /* Homepage grid: 2 cards per row on mobile */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
 }
+
