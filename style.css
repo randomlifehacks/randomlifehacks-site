@@ -115,6 +115,15 @@ body.home-page .card {
   opacity: 0.35;
 }
 
+
+.coming-soon::before {
+  background-image: url("/images/comingsoonhomepage.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35; /* match other cards */
+}
+
+
 .placeholder {
   opacity: 0.6;
   pointer-events: none;
