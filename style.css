@@ -241,7 +241,7 @@ body.streaming-page::before {
   text-align: center;
 }
 /* Widen content only on the Bean page */
-body.bean-page .bingoblitz-content {
+body.bean-page .rlh-content {
   max-width: 1000px;
 }
 
