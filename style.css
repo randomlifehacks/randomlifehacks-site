@@ -261,14 +261,13 @@ body.bean-page .bingoblitz-content {
   line-height: 1.6;
   margin-bottom: 2rem;
 }
-
-/* Reduce header spacing on Bean page */
-body.bean-page .header {
-  padding-bottom: 0.05rem;
-}
 /* ==================================================
    BEAN PAGE ASSETS
    ================================================== */
+body.bean-page .header {
+  padding-bottom: 0.05rem;
+}
+
 body.bean-page .bean-assets {
   margin-top: 3rem;
 }
