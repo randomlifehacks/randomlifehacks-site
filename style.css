@@ -235,6 +235,7 @@ body.streaming-page::before {
    PAGE CONTENT
    ================================================== */
 .streaming-content,
+.dressbean-content,
 .bingoblitz-content,
 .dicedreams-content {
   max-width: 760px;
@@ -247,18 +248,14 @@ body.bean-page .bingoblitz-content {
   max-width: 1000px;
 }
 
-.bb-title,
-.dd-title,
-.stream-title {
+.rlh-title {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
   color: #020617;
 }
 
-.bb-disclaimer,
-.dd-disclaimer,
-.stream-disclaimer {
+.rlh-disclaimer {
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.6;
