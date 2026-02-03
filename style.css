@@ -177,11 +177,8 @@ body.streaming-page .bflix-card .bflix-text {
 /* ==================================================
    FIXED BACKGROUND PAGES
    ================================================== */
-body.home-page,
-body.bean-page,
-body.bingoblitz-page,
-body.dicedreams-page,
-body.streaming-page {
+
+body[class*="-page"] {
   position: relative;
   min-height: 100vh;
 }
