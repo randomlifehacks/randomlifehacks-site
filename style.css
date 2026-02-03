@@ -5,7 +5,14 @@
   --muted: #64748b;
   --border: #e5e7eb;
   --accent: #6366f1;
+  /* Optimized Site Colors */
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+  --link-visited: #ab8ede;
+  --dark-heading: #020617;
+  --overlay: rgba(255, 255, 255, 0.75);
 }
+
 /* ==================================================
    GLOBAL RESET
    ================================================== */
@@ -22,8 +29,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* ==================================================
-   HEADER (Homepage)
+   FIXED BACKGROUND PAGES (Combined Logic)
+   ================================================== */
+body[class*="-page"] {
+  position: relative;
+  min-height: 100vh;
+}
+
+body[class*="-page"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Page-specific background assignments */
+body.home-page::before { background-image: url("/images/homepageig2.png"); }
+body.bean-page::before { background-image: linear-gradient(rgba(255,255,255,0.7) 0 0), url("/images/beanhp.png"); }
+body.bingoblitz-page::before { background-image: linear-gradient(rgba(255,255,255,0.6) 0 0), url("/images/bb-background.jpg"); }
+body.dicedreams-page::before { background-image: linear-gradient(var(--overlay) 0 0), url("/images/dicedreamspage.png"); }
+body.streaming-page::before { background-image: linear-gradient(var(--overlay) 0 0), url("/images/streaming.jpg"); }
+
+/* ==================================================
+   HEADER & LAYOUT
    ================================================== */
 .header {
   text-align: center;
@@ -39,9 +72,7 @@ body {
   margin-top: 0.5rem;
   color: var(--muted);
 }
-/* ==================================================
-   LAYOUT
-   ================================================== */
+
 .container {
   max-width: 1100px;
   margin: auto;
@@ -60,8 +91,9 @@ body.streaming-page .grid {
   grid-template-columns: 1fr;
   max-width: 100%;
 }
+
 /* ==================================================
-   BASE CARD (Homepage cards)
+   BASE CARD (Homepage)
    ================================================== */
 .card {
   position: relative;
@@ -75,29 +107,16 @@ body.streaming-page .grid {
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-body.home-page .card {
-  aspect-ratio: 16 / 9;
-}
+body.home-page .card { aspect-ratio: 16 / 9; }
 
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
 }
 
-.card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.card h2 {
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
+.card > * { position: relative; z-index: 1; }
+.card h2 { font-size: 1.2rem; }
+.card p { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
 
 .card::before {
   content: "";
@@ -109,10 +128,13 @@ body.home-page .card {
   opacity: 0.35;
 }
 
-.coming-soon::before {
-  background-image: url("/images/comingsoonhomepage.png");
-  opacity: 0.45; 
-}
+/* Card Specific Variants */
+.dress-bean, .bingo-blitz, .dice-dreams, .streaming { border-color: var(--dark-heading); }
+.dress-bean::before { background-image: url("/images/beanhp.png"); }
+.bingo-blitz::before { background-image: url("/images/bingo-blitz.jpg"); }
+.dice-dreams::before { background-image: url("/images/dicedreams.png"); }
+.streaming::before { background-image: url("/images/streaming.jpg"); }
+.coming-soon::before { background-image: url("/images/comingsoonhomepage.png"); opacity: 0.45; }
 
 .placeholder {
   opacity: 0.6;
@@ -121,36 +143,10 @@ body.home-page .card {
   flex-direction: column;
   justify-content: center;
 }
-/* ==================================================
-   CARD VARIANTS
-   ================================================== */
-.dress-bean,
-.bingo-blitz,
-.dice-dreams,
-.streaming {
-  border-color: #020617;
-}
 
-.dress-bean::before {
-  background-image: url("/images/beanhp.png");
-}
-
-.bingo-blitz::before {
-  background-image: url("/images/bingo-blitz.jpg");
-}
-
-.dice-dreams::before {
-  background-image: url("/images/dicedreams.png");
-}
-
-.streaming::before {
-  background-image: url("/images/streaming.jpg");
-}
-
+/* BFLIX SPECIAL CARD */
 .bflix-card::before {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("/images/bflix.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25) 0 0), url("/images/bflix.png");
   opacity: 0.9;
 }
 
@@ -159,81 +155,29 @@ body.home-page .card {
   padding: 0.9rem 1.2rem;
   border-radius: 0.75rem;
   background: rgba(43, 9, 22, 0.88);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-body.streaming-page .bflix-card .bflix-text {
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.bflix-card h2,
-.bflix-card p {
-  color: #f8fafc;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-/* ==================================================
-   FIXED BACKGROUND PAGES
-   ================================================== */
-
-body[class*="-page"] {
-  position: relative;
-  min-height: 100vh;
-}
-
-body[class*="-page"]::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-body[class*="-page"] {
-  --overlay: rgba(255, 255, 255, 0.75); 
-}
-
-body.home-page::before { background-image: url("/images/homepageig2.png"); }
-
-body.bean-page::before { 
-  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("/images/beanhp.png"); 
-}
-
-body.bingoblitz-page::before { 
-  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("/images/bb-background.jpg"); 
-}
-
-body.dicedreams-page::before { 
-  background-image: linear-gradient(var(--overlay), var(--overlay)), url("/images/dicedreamspage.png"); 
-}
-
-body.streaming-page::before { 
-  background-image: linear-gradient(var(--overlay), var(--overlay)), url("/images/streaming.jpg"); 
-}
+body.streaming-page .bflix-card .bflix-text { max-width: 520px; margin: 0 auto; }
+.bflix-card h2, .bflix-card p { color: #f8fafc; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); }
 
 /* ==================================================
-   PAGE CONTENT
-   ================================================== */
+   PAGE CONTENT & ASSETS
+   ================================================= */
 .rlh-content {
   max-width: 760px;
   margin: 0 auto;
   padding: 1.25rem;
   text-align: center;
 }
-/* Widen content only on the Bean page */
-body.bean-page .rlh-content {
-  max-width: 1000px;
-}
+
+body.bean-page .rlh-content { max-width: 1000px; }
 
 .rlh-title {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #020617;
+  color: var(--dark-heading);
 }
 
 .rlh-disclaimer {
@@ -242,26 +186,13 @@ body.bean-page .rlh-content {
   line-height: 1.6;
   margin-bottom: 2rem;
 }
-/* ==================================================
-   BEAN PAGE ASSETS
-   ================================================== */
-body.bean-page .header {
-  padding-bottom: 0.05rem;
-}
 
-body.bean-page .bean-assets {
-  margin-top: 3rem;
-}
+/* BEAN PAGE ASSETS */
+body.bean-page .header { padding-bottom: 0.05rem; }
+.bean-assets { margin-top: 3rem; }
+.bean-section-title { font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1.25rem; text-align: center; color: var(--dark-heading); }
 
-body.bean-page .bean-section-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 2.5rem 0 1.25rem;
-  text-align: center;
-  color: #020617;
-}
-
-body.bean-page .bean-grid {
+.bean-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -270,36 +201,24 @@ body.bean-page .bean-grid {
   margin: 0 auto;
 }
 
-body.bean-page .bean-item {
-  text-align: center;
-  width: 240px;
-}
+.bean-item { text-align: center; width: 240px; }
+.bean-item img { width: 100%; border: 1px solid #000; border-radius: 12px; background: white; display: block; }
 
-body.bean-page .bean-item img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border: 1px solid #000;
-  border-radius: 12px;
-  background: white;
-  display: block;
-}
-
-body.bean-page .bean-item a {
+/* UNIFIED LINK STYLES */
+.bean-item a, .dd-links a, .bb-reward-box a {
   display: inline-block;
   margin-top: 0.4rem;
   font-size: 0.9rem;
-  color: #2563eb;
+  font-weight: 600;
+  color: var(--link);
   text-decoration: underline;
 }
 
-body.bean-page .bean-item a:hover {
-  color: #1d4ed8;
-}
-/* ==================================================
-   ✅ DICE DREAMS – SINGLE BOX TABLE (MATCHES DRAWING)
-   ================================================== */
-body.dicedreams-page .dd-table {
+.bean-item a:hover, .dd-links a:hover, .bb-reward-box a:hover { color: var(--link-hover); }
+.bb-reward-box a:visited { color: var(--link-visited); }
+
+/* DICE DREAMS TABLE */
+.dd-table {
   background: rgba(255,255,255,0.35);
   display: inline-grid;
   grid-template-columns: max-content max-content;
@@ -307,49 +226,14 @@ body.dicedreams-page .dd-table {
   margin: 0 auto 2rem;
 }
 
-body.dicedreams-page .dd-row {
-  display: contents;
-}
+.dd-row { display: contents; }
+.dd-date, .dd-links { padding: 0.9rem 1.25rem; text-align: center; white-space: nowrap; border-bottom: 1px solid #d1d5db; }
+.dd-date { font-weight: 500; border-right: 1px solid #d1d5db; }
+.dd-row:last-child .dd-date, .dd-row:last-child .dd-links { border-bottom: none; }
 
-body.dicedreams-page .dd-date,
-body.dicedreams-page .dd-links {
-  padding: 0.9rem 1.25rem;
-  text-align: center;
-  white-space: nowrap;
-  border-bottom: 1px solid #d1d5db;
-}
-
-body.dicedreams-page .dd-date {
-  font-weight: 500;
-  border-right: 1px solid #d1d5db;
-}
-
-body.dicedreams-page .dd-links a {
-  font-weight: 600;
-  color: #2563eb;
-  text-decoration: underline;
-}
-
-body.dicedreams-page .dd-links a:hover {
-  color: #1d4ed8;
-}
-
-/* remove bottom border on last row */
-body.dicedreams-page .dd-row:last-child .dd-date,
-body.dicedreams-page .dd-row:last-child .dd-links {
-  border-bottom: none;
-}
-/* ==================================================
-   BINGO BLITZ – CLEAN REWARD LAYOUT
-   ================================================== */
-body.bingoblitz-page .bb-date {
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-  color: #020617;
-}
-
-body.bingoblitz-page .bb-reward-box {
+/* BINGO BLITZ REWARDS */
+.bb-date { margin: 2.5rem 0 0.75rem; font-weight: 700; color: var(--dark-heading); }
+.bb-reward-box {
   background: rgba(255,255,255,0.35);
   border: 2px solid rgba(2,6,23,0.35);
   border-radius: 1rem;
@@ -361,63 +245,22 @@ body.bingoblitz-page .bb-reward-box {
   max-width: 420px;
 }
 
-body.bingoblitz-page .bb-reward-box a {
-  color: #2563eb;
-  font-weight: 600;
-  text-decoration: underline;
-  padding: 0.35rem 0;
-  border-bottom: 1px solid #d1d5db; 
-}
+.bb-reward-box a { padding: 0.35rem 0; border-bottom: 1px solid #d1d5db; }
+.bb-note { margin-top: 0.5rem; font-size: 0.85rem; color: #475569; }
 
-/* After link has been clicked */
-body.bingoblitz-page .bb-reward-box a:visited {
-  color: #ab8ede; 
-}
-
-body.bingoblitz-page .bb-reward-box a:hover {
-  color: #1d4ed8;
-}
-
-body.bingoblitz-page .bb-note {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #475569;
-}
-
-
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-
+/* ==================================================
+   FOOTER & MOBILE
+   ================================================== */
+footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
 
 @media (max-width: 640px) {
-  body.home-page .card {
-    aspect-ratio: auto;
-    height: 160px;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .rlh-title {
-    font-size: 1.8rem;
-  }
-
-  body.bingoblitz-page .bb-reward-box {
-    max-width: 100%;
-  }
+  body.home-page .card { aspect-ratio: auto; height: 160px; }
+  .header h1 { font-size: 2rem; }
+  .rlh-title { font-size: 1.8rem; }
+  .bb-reward-box { max-width: 100%; }
   
   body.home-page .grid {
     grid-template-columns: repeat(2, minmax(180px, 1fr));
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
   }
 }
