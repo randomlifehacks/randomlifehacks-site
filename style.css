@@ -234,10 +234,7 @@ body.streaming-page::before {
 /* ==================================================
    PAGE CONTENT
    ================================================== */
-.streaming-content,
-.dressbean-content,
-.bingoblitz-content,
-.dicedreams-content {
+.rlh-content {
   max-width: 760px;
   margin: 0 auto;
   padding: 1.25rem;
