@@ -183,11 +183,7 @@ body[class*="-page"] {
   min-height: 100vh;
 }
 
-body.home-page::before,
-body.bean-page::before,
-body.bingoblitz-page::before,
-body.dicedreams-page::before,
-body.streaming-page::before {
+body[class*="-page"]::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -197,37 +193,28 @@ body.streaming-page::before {
   background-repeat: no-repeat;
 }
 
-body.home-page::before {
-  background-image: url("/images/homepageig2.png");
+body[class*="-page"] {
+  --overlay: rgba(255, 255, 255, 0.75); 
 }
 
-body.bean-page::before {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.70),
-                    rgba(255,255,255,0.70)),
-    url("/images/beanhp.png");
+body.home-page::before { background-image: url("/images/homepageig2.png"); }
+
+body.bean-page::before { 
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("/images/beanhp.png"); 
 }
 
-body.bingoblitz-page::before {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.60),
-                    rgba(255,255,255,0.60)),
-    url("/images/bb-background.jpg");
+body.bingoblitz-page::before { 
+  background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("/images/bb-background.jpg"); 
 }
 
-body.dicedreams-page::before {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.75),
-                    rgba(255,255,255,0.75)),
-    url("/images/dicedreamspage.png");
+body.dicedreams-page::before { 
+  background-image: linear-gradient(var(--overlay), var(--overlay)), url("/images/dicedreamspage.png"); 
 }
 
-body.streaming-page::before {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.75),
-                    rgba(255,255,255,0.75)),
-    url("/images/streaming.jpg");
+body.streaming-page::before { 
+  background-image: linear-gradient(var(--overlay), var(--overlay)), url("/images/streaming.jpg"); 
 }
+
 /* ==================================================
    PAGE CONTENT
    ================================================== */
@@ -379,14 +366,13 @@ body.bingoblitz-page .bb-reward-box a {
   font-weight: 600;
   text-decoration: underline;
   padding: 0.35rem 0;
-  border-bottom: 1px solid #d1d5db; /* light gray */
+  border-bottom: 1px solid #d1d5db; 
 }
 
 /* After link has been clicked */
 body.bingoblitz-page .bb-reward-box a:visited {
   color: #ab8ede; 
 }
-
 
 body.bingoblitz-page .bb-reward-box a:hover {
   color: #1d4ed8;
@@ -397,18 +383,18 @@ body.bingoblitz-page .bb-note {
   font-size: 0.85rem;
   color: #475569;
 }
-/* ==================================================
-   FOOTER
-   ================================================== */
+
+
+
 footer {
   text-align: center;
   padding: 2rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
-/* ==================================================
-   MOBILE
-   ================================================== */
+
+
+
 @media (max-width: 640px) {
   body.home-page .card {
     aspect-ratio: auto;
